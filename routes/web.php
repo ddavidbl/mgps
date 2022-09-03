@@ -26,3 +26,8 @@ Route::middleware(['auth', 'admin'])->controller(AdminController::class)->group(
     Route::get('/dashboard', 'dashboardIndex')->name('dashboard');
     Route::get('/rendermap', 'renderMap')->name('render');
 });
+
+Route::middleware(['auth', 'user'])->controller(TrackController::class)->group(function () {
+    Route::get('/track', 'trackIndex')->name('track');
+    Route::patch('/updatelog/{id}', 'update')->name('update');
+});
