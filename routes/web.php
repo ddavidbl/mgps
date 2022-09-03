@@ -24,4 +24,5 @@ Auth::routes();
 
 Route::middleware(['auth', 'admin'])->controller(AdminController::class)->group(function () {
     Route::get('/dashboard', 'dashboardIndex')->name('dashboard');
+    Route::get('/rendermap', 'renderMap')->name('render');
 });

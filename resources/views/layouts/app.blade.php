@@ -34,7 +34,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         {{-- @if (Auth::user()->role == 1) --}}
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                             <a href="nav-link" href="">User</a>
                             </li>
                             <li class="nav-item">
@@ -42,7 +42,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="nav-link" href="">Service</a>
-                            </li>
+                            </li> --}}
                         {{-- @endif --}}
                     </ul>
 
@@ -85,7 +85,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="min-h-screen">
             @yield('content')
         </main>
     </div>
