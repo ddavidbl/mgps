@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="">
-        <div class="bg-white mx-auto">
-            <div id="map" style="height: 600px"></div>
-        </div>
+<div class="min-h-screen">
+    <div class="bg-white mx-auto p-3 row">
+        <div id="map" class="col-md-12" style="height: 600px"></div>
     </div>
+</div>
+
 @endsection
 
 @push('child-script')
@@ -57,5 +58,9 @@ var render = function(){
     });
     }
     render(); 
+
+
+
+
     </script>
 @endpush
