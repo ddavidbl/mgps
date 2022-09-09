@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="mt-2 p-4 col-12 min-h-screen">
-            <div class="row">
+    <div class="mt-2 p-4 ">
+            <div class="row min-vh-100">
                 <div class="d-flex align-items-start">
-                    <div class=" col-2 nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link active mt-2" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">User</button>
-                        <button class="nav-link mt-2" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">New User</button>
+                    <div class=" p-1 col-2 nav flex-column nav-pills me-3 vh-100  rounded shadow bg-body align-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active mt-4 w-75" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">User</button>
+                        <button class="nav-link mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">New User</button>
                     </div>
-                    <div class="tab-content offset-1 col-8" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab" tabindex="0">
+                    <div class="rounded shadow bg-body align-content-center tab-content col-10 p-4 vh-100" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active rounded border border-1" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab" tabindex="0">
                             {{-- render data --}}
                         </div>
                         <div class="tab-pane fade" id="v-pills-form" role="tabpanel" aria-labelledby="v-pills-form-tab" tabindex="0">
