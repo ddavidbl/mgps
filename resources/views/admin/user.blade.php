@@ -2,19 +2,155 @@
 
 @section('content')
     <div class="mt-2 p-4 ">
-            <div class="row min-vh-100">
+        
+            <div class="row">
                 <div class="d-flex align-items-start">
-                    <div class=" p-1 col-2 nav flex-column nav-pills me-3 vh-100  rounded shadow bg-body align-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link active mt-4 w-75" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">User</button>
-                        <button class="nav-link mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">New User</button>
+                    <div class=" p-1 col-2 nav flex-column nav-pills me-3 min-vh-100  rounded shadow bg-body align-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link shadow  mt-4 w-75" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">User</button>
+                        <button class="nav-link shadow active mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">New User</button>
                     </div>
-                    <div class="rounded shadow bg-body align-content-center tab-content col-10 p-4 vh-100" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active rounded border border-1" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab" tabindex="0">
-                            {{-- render data --}}
+                    <div class="rounded shadow bg-body align-content-center tab-content col-10 p-4 vh-100 overflow-scroll" id="v-pills-tabContent">
+                        
+                        <div class="tab-pane fade show  " id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab" tabindex="0">
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                            <div id="renderUser" class="rounded border border-1 mt-4">
+                                {{-- render data --}}
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-form" role="tabpanel" aria-labelledby="v-pills-form-tab" tabindex="0">
-                            <div>
-                                New User Form
+
+                        <div class="tab-pane fade active show " id="v-pills-form" role="tabpanel" aria-labelledby="v-pills-form-tab" tabindex="0">
+                            <div class="rounded shadow w-auto p-4 ">
+                                <h3 class="text-center">Add New User Form</h3>
+
+                                <div class="p-2 mt-2">
+                                    <div class="mb-4 row">
+                                        <h4>Data Login</h4>
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Username</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-2 row">
+                                        <h4>Data Kendaraan</h4>
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Nomor Registrasi</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="" name="" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Name Pemilik</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="" name="" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Alamat</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Merk</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Tipe</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Jenis</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Model</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Tahun Pembuatan</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Nomor Rangkaian</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Nomor Mesin</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Warna</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Warna TNKB</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Bahan Bakar</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row flex">
+                                        <button class="btn btn-primary" type="submit" id="">Submit Data</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -37,7 +173,7 @@
                 url: '{{route('test')}}',
                 dataType: "json",
                 success: function (response) {
-                    $('#v-pills-user').html(response.html);
+                    $('#renderUser').html(response.html);
                 }
             });
         });
