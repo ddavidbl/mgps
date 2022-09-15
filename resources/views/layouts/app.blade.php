@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{asset('img/logo-papua-barat.png')}}">
+                    <img src="{{asset('img/logo papua barat.png')}}" style=" width:35px">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -33,17 +33,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        {{-- @if (Auth::user()->role == 1) --}}
-                            {{-- <li class="nav-item">
-                            <a href="nav-link" href="">User</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="nav-link" href="">Track</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="nav-link" href="">Service</a>
-                            </li> --}}
-                        {{-- @endif --}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -55,13 +44,6 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-
                             
                         @else
 

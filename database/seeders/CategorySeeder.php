@@ -19,18 +19,22 @@ class CategorySeeder extends Seeder
 
         DB::table('categories')->insert([
             'kategori' => 'Ambulance',
+            'icon' => '',
         ]);
 
         DB::table('categories')->insert([
-            'kategori' => 'Damkar',
+            'kategori' => 'Pemadam Kebakaran',
+            'icon' => '',
         ]);
 
         DB::table('categories')->insert([
             'kategori' => 'Truk Sampah',
+            'icon' => '',
         ]);
 
         DB::table('categories')->insert([
-            'kategori' => 'Polisi'
+            'kategori' => 'Polisi',
+            'icon' => 'police',
         ]);
     }
 }

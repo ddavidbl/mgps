@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="min-h-screen">
-    <div class="bg-white mx-auto p-3 row">
+    <div class="bg-white mx-auto p-3 erow">
         <div id="map" class="col-md-12" style="height: 600px"></div>
     </div>
 </div>

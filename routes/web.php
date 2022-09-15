@@ -26,16 +26,17 @@ Route::middleware(['auth', 'admin'])->controller(AdminController::class)->group(
     Route::get('/dashboard', 'dashboardIndex')->name('dashboard');
     Route::get('/rendermap', 'renderMap')->name('render');
 
-    Route::get('/test', 'test')->name('test');
+    Route::get('/ikon/{id}', 'ikon')->name('ikon');
+    Route::get('/user/list', 'userList')->name('user_render');
     Route::get('/user', 'userIndex')->name('user');
 
-    Route::post('/store/user', 'store')->name('AddUser');
-    Route::get('/edit/user/{$id}', 'editUser')->name('EditUser');
+    Route::post('/new/user', 'newUser')->name('NewUser');
+    Route::get('/edit/user/{id}', 'editUser')->name('EditUser');
     Route::patch('/update/user/{id}' . 'updateuser')->name('UpdateUser');
     Route::get('/delete/user/{id}', 'deleteuser')->name('deleteUser');
 });
 
-Route::middleware(['auth', 'user'])->controller(TrackController::class)->group(function () {
-    Route::get('/track', 'trackIndex')->name('track');
-    Route::patch('/track/user/{id}', 'update')->name('TrackUser');
-});
+// Route::middleware(['auth', 'user'])->controller(TrackController::class)->group(function () {
+//     Route::get('/track', 'trackIndex')->name('track');
+//     Route::patch('/track/user/{id}', 'update')->name('TrackUser');
+// });
