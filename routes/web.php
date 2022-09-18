@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TrackController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -14,9 +16,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+
+
 
 Auth::routes();
 
@@ -27,6 +29,7 @@ Route::middleware(['auth', 'admin'])->controller(AdminController::class)->group(
     Route::get('/rendermap', 'renderMap')->name('render');
 
     Route::get('/ikon/{id}', 'ikon')->name('ikon');
+    Route::get('/view/{id}', 'viewUser')->name('viewUser');
     Route::get('/user/list', 'userList')->name('user_render');
     Route::get('/user', 'userIndex')->name('user');
 
@@ -34,6 +37,8 @@ Route::middleware(['auth', 'admin'])->controller(AdminController::class)->group(
     Route::get('/edit/user/{id}', 'editUser')->name('EditUser');
     Route::patch('/update/user/{id}' . 'updateuser')->name('UpdateUser');
     Route::get('/delete/user/{id}', 'deleteuser')->name('deleteUser');
+
+    Route::get('/test/{id}', 'log');
 });
 
 // Route::middleware(['auth', 'user'])->controller(TrackController::class)->group(function () {

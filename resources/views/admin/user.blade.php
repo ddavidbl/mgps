@@ -11,12 +11,200 @@
                     </div>
                     <div class="rounded shadow bg-body align-content-center tab-content col-10 p-4 vh-100 overflow-scroll" id="v-pills-tabContent">
                         
+                        {{-- Edit Modal --}}
+                            <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen modal-dialog-centered modal-dialog-scrollable ">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel">Edit User: <span id="id_user"></span></h5>
+                                            <input type="hidden" class="d-none" id="user_id_value">
+                                            <button type="button" class="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="mb-3 form-group">
+                                                <label for=""></label>
+                                                <input type="text" name="" id="">
+                                                <ul></ul>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" id="" class="btn btn-primary" >Update Data</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {{-- View Modal --}}
+                            <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                <div class=" modal-dialog  modal-fullscreen">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel">User: <span id="id_view_user"></span></h5>
+                                            <input type="hidden" class="d-none" id="user_id_value" value="">
+                                            <button type="button" class="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="card mb-2">
+                                                    <div class="card-header">
+                                                    Data Kendaraan
+                                                    </div>
+                                                    <div class="card-body row">
+                                                        <div class="col">
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_nomor_registrasi" class="col-3 col-form-label">Nomor Registrasi</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_nomor_registrasi" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_nama_pemilik" class="col-3 col-form-label">Nama Pemilik</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_nama_pemilik" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_alamat" class="col-3 col-form-label">Alamat</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_alamat" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_merk" class="col-3 col-form-label">Merk</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_merk" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_tipe" class="col-3 col-form-label">Tipe</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_tipe" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_jenis" class="col-3 col-form-label">Jenis</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_jenis" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_model" class="col-3 col-form-label">Model</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_model" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col">
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_tahun_pembuatan" class="col-3 col-form-label">Tahun Pembuatan</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_tahun_pembuatan" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_nomor_rangkaian" class="col-3 col-form-label">Nomor Rangkaian</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_nomor_rangkaian" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_nomor_mesin" class="col-3 col-form-label">Nomor Mesin</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_nomor_mesin" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_warna" class="col-3 col-form-label">Warna</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_warna" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_warna_tnkb" class="col-3 col-form-label">Warna TNKB</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_tnkb" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row mb-1">
+                                                                <label for="view_bahan_bakar" class="col-3 col-form-label">Bahan Bakar</label>
+                                                                <div class="col-4">
+                                                                    <input type="text" disabled value="" id="view_bahan_bakar" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        Data Service Kendaraan
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Tanggal</th>
+                                                                    <th>Catatan Service Kendaraan</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="" id="render_service_log">
+                                                                
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {{-- Delete Modal --}}
+                            <div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4>Delete <span id="delete_user_id"></span></h4>
+                                            <input type="text" class="d-none" value="">
+                                        </div>
+
+                                        <div class="modal-body">
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" id="" data-bs-dismiss="modal" class="btn btn-secondary">Close</button>
+                                            <button type="button" id="deleteBtn" class="btn btn-danger">Confirm Delete</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
                         <div class="tab-pane fade active show" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab" tabindex="0">
                             <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBox">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
-                            <div id="renderUser" class="rounded border border-1 mt-4">
+                            <div id="renderUser" class="rounded border border-1 mt-4 p-2">
                                 {{-- render data --}}
                             </div>
                         </div>
@@ -100,7 +288,6 @@
                                             <label for="tipe" class="col-sm-2 col-form-label">Tipe</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="tipe" name="tipe" required>
-
                                             </div>
                                         </div>
 
@@ -179,19 +366,87 @@
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script>
 
-    
-    
+// Close Button
+    $(document).on('click','.btn-close', function(e){
+        e.preventDefault();
+        $('.modal input').val("");
+        $('.modal table tbody').html("");
+    });
+
+    $(document).on('keydown','',function(e){
+        e.preventDefault();
+        if(event.key == 'Escape'){
+            $('.modal input').val("");
+            $('.modal table tbody').html("");
+        }
+    })
+
+// Kategori Generate
     $('#kategori').change(function () { 
         var id_kategori = this.value;
         $.ajax({
             type: "GET",
-            url: '/ikon/'+id_kategori,
+            url: '{{route('ikon',['id'=>'id_kategori'])}}',
             success: function (response) {
                 $('#ikonKategori').val(response.ikon.icon);
             }
         });
     });
 
+// Delete Modal
+    $(document).on('click','#openDelete', function (e) {
+        e.preventDefault();
+        var delete_id = $(this).val();
+        $('#DeleteModal').modal('show');
+        $('#delete_user_id').val(delete_id);
+    });
+
+    $(document).on('click','#deleteBtn', function (e) {
+        e.preventDefault();
+        var delete_id = $(this).val();
+        
+    });
+
+// View Modal
+    $(document).on('click','#openView', function () {
+        var view_id = $(this).val();
+        $('#user_id_value').val(view_id);
+        $('#id_view_user').text(view_id);
+        $('#viewModal').modal('show');
+
+        $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+        $.ajax({
+            type: "GET",
+            url: '/view/'+view_id,
+            data: "data",
+            dataType: "json",
+            success: function (response) {
+                $('#view_nomor_registrasi').val(response.user.nomor_registrasi);
+                $('#view_nama_pemilik').val(response.user.nama_pemilik);
+                $('#view_alamat').val(response.user.alamat);
+                $('#view_merk').val(response.user.merk);
+                $('#view_tipe').val(response.user.tipe);
+                $('#view_jenis').val(response.user.jenis);
+                $('#view_model').val(response.user.model);
+                $('#view_tahun_pembuatan').val(response.user.tahun_pembuatan);
+                $('#view_nomor_rangkaian').val(response.user.nomor_rangkaian);
+                $('#view_nomor_mesin').val(response.user.nomor_mesin);
+                $('#view_warna').val(response.user.warna);
+                $('#view_warna_tnkb').val(response.user.warna_tnkb);
+                $('#view_bahan_bakar').val(response.user.bahan_bakar);
+
+                $.each(response.log, function (indexInArray, valueOfElement) { 
+                    $('#render_service_log').append('<tr><td>'+valueOfElement.id+'</td><td>'+valueOfElement.catatan_servis+'</td></tr>');
+                });
+            }
+        });
+
+    });
 
 // Show and Render User
     var user = function(){
@@ -302,7 +557,7 @@
     });
 
 // Edit Modal
-    $(document).on('click','.editBtn', function (e) {
+    $(document).on('click','#openEdit', function (e) {
         e.preventDefault();
         var user_id = $(this).val();
         $('').addClass('d-none');
@@ -326,73 +581,14 @@
         });
     });
 
-    // $(document).on('click','.update_user', function (e) {
-    //     e.preventDefault();
-    //     $(this).text(textString);
-    //     var user_id = $(selector).val();
-    //     var new_user_data ={
-
-    //     };
-
-    //     $.ajaxSetup({
-    //                     headers: {
-    //                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //                     }
-    //                 });
-    //     });
-
-    //     $.ajax({
-    //         type: "PATCH",
-            
-    //         data: new_user_data,
-    //         dataType: "json",
-    //         success: function (response) {
-    //             if(response.status == 400){
-                    
-    //             }
-    //             else if(response.status == 404){
-
-    //             }
-    //             else{
-
-    //                 user();
-    //             }
-    //         }
-    //     });
-
-// Delete User
-    $(document).on('click','.deleteBtn', function (e) {
-        e.preventDefault();
-        var user_id = $(this).val();
-        $(selector).text();
-        $(selector).val();
-        $('#deleteModal').modal('show');
-        $().addClass(className);
-    });
-    
-    $(document).on('click','.confirm_delete', function (e) {
-        e.preventDefault();
-
-        $.ajaxSetup({
-            headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        var user_id = $(selector).val();
-        $.ajax({
-            type: "GET",
-            data: {"_method":"DELETE","_token": "{{ csrf_token() }}"},
-            dataType: "dataType",
-            success: function (response) {
-                $('#deleteModal').modal('show');
-                $(selector).addClass(className);
-                $(selector).removeClass(className);
-                $(selector).text(textString);
-                $(selector).text(textString);
-                user();
-            }
-        });
-    });
+    // Search Box
+        $(document).ready(function () {
+                $('#searchBox').on("keyup",function(){
+                    var value = $(this).val().toLowerCase();
+                    $('#tableBody tr').filter(function(){
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) >-1)
+                    });
+                });
+            });
     </script>
 @endpush

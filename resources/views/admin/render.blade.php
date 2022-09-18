@@ -1,23 +1,21 @@
 <table class="table table-striped">
     <thead>
         <tr class="text-center">
-            <th>Data 1</th>
-            <th>Data 2</th>
-            <th>Data 3</th>
-            <th>Data 4</th>
+            <th>Nomor Registrasi</th>
+            <th>Nama Pemilik</th>
+            <th>Action</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="tableBody">
         @foreach ($users as $user)
             <tr class="text-center">
                 <td>{{$user->nomor_registrasi}}</td>
-                <td>{{$user->kategori}}</td>
                 <td>{{$user->nama_pemilik}}</td>
                 <td>
                     <div class="">
-                        <button class="btn btn-warning" id="" value="{{$user->id}}">Edit</button>
-                        <button class="btn btn-danger" id="" value="{{$user->id}}">Delete</button>
-                        <button class="btn btn-primary" id="" value="{{$user->id}}">View</button>
+                        <button class="btn btn-primary" id="openView" value="{{$user->id}}"><img src="{{asset('img/view-white.png')}}" alt=""> View</button>
+                        <button class="btn btn-warning" id="openEdit" value="{{$user->id}}"><img src="{{asset('img/edit-white.png')}}" alt=""> Edit</button>
+                        <button class="btn btn-danger" id="openDelete" value="{{$user->id}}"><img src="" alt=""><img src="{{asset('img/trash-white.png')}}" alt=""> Delete</button>
                     </div>
                 </td>
             </tr>

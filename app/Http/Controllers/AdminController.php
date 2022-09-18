@@ -5,25 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Servicelog;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
 
-    public function ikon($id)
+    public function viewUser($id)
     {
-        $ikon = Category::find($id);
-        if ($ikon) {
-            return response()->json([
-                'status' => 200,
-                'ikon' => $ikon,
-            ]);
-        } else {
-            return response()->json([
-                'status' => 500,
-                'message' => 'kategori tidak ditemukan',
-            ]);
-        }
+        $user = User::find($id);
+        $service_log = Servicelog::select('id', 'catatan_servis')->where('id_kendaraan', $id)->get();
+        return response()->json([
+            'status' => 200,
+            'user' => $user,
+            'log' => $service_log,
+        ]);
+    }
+
+    public function log($id)
+    {
+        $log_data = Servicelog::select('id', 'catatan_servis')->where('id_kendaraan', $id)->get();
+        return response()->json([
+            'status' => 200,
+            'log' => $log_data,
+        ]);
     }
 
     public function userList()
@@ -41,6 +46,22 @@ class AdminController extends Controller
     {
         $kategoris = Category::all();
         return view('admin.user', compact('kategoris'));
+    }
+
+    public function ikon($id)
+    {
+        $ikon = Category::find($id);
+        if ($ikon) {
+            return response()->json([
+                'status' => 200,
+                'ikon' => $ikon,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => 'kategori tidak ditemukan',
+            ]);
+        }
     }
 
     public function dashboardIndex()
@@ -156,6 +177,60 @@ class AdminController extends Controller
         return response()->json([
             'status' => 200,
             'message' => 'This User Deleted',
+        ]);
+    }
+
+    // Service Log
+    public function addLog(Request $request)
+    {
+        $validate = Validator::make($request->all(), [
+            'id_kendaraan' => 'required',
+            'catatan_servis' => 'required',
+        ]);
+
+        if ($validate->fails()) {
+            return response()->json([
+                'status' => 400,
+                'errors' => $validate->errors(),
+            ]);
+        } else {
+            $service_log = new Servicelog;
+            $service_log = $request->input('id_kendaraan');
+            $service_log = $request->input('catatan_servis');
+            $service_log->save();
+            return response()->json([
+                'status' => 200,
+                'message' => 'Service Log Added'
+            ]);
+        }
+    }
+
+
+
+
+    public function editLog($id)
+    {
+        $service_log = Servicelog::find($id);
+        if ($service_log) {
+            return response()->json([
+                'status' => 200,
+                'log' => $service_log,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => 'Log Not Found',
+            ]);
+        }
+    }
+
+    public function deleteLog($id)
+    {
+        $delete_log = Servicelog::find($id)->delete();
+        $delete_log;
+        return response()->json([
+            'status' => 200,
+            'message' => 'Log Deleted Successfully',
         ]);
     }
 }
