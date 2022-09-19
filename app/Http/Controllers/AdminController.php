@@ -14,22 +14,15 @@ class AdminController extends Controller
     public function viewUser($id)
     {
         $user = User::find($id);
-        $service_log = Servicelog::select('id', 'catatan_servis')->where('id_kendaraan', $id)->get();
+        $logs = Servicelog::select('id', 'id_kendaraan', 'catatan_servis')->where('id_kendaraan', $id)->get();
+        $render_log = view('admin.log', compact('logs'))->render();
         return response()->json([
             'status' => 200,
             'user' => $user,
-            'log' => $service_log,
+            'log' => $render_log,
         ]);
     }
 
-    public function log($id)
-    {
-        $log_data = Servicelog::select('id', 'catatan_servis')->where('id_kendaraan', $id)->get();
-        return response()->json([
-            'status' => 200,
-            'log' => $log_data,
-        ]);
-    }
 
     public function userList()
     {

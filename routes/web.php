@@ -38,7 +38,7 @@ Route::middleware(['auth', 'admin'])->controller(AdminController::class)->group(
     Route::patch('/update/user/{id}' . 'updateuser')->name('UpdateUser');
     Route::get('/delete/user/{id}', 'deleteuser')->name('deleteUser');
 
-    Route::get('/test/{id}', 'log');
+    Route::get('/test', 'log');
 });
 
 // Route::middleware(['auth', 'user'])->controller(TrackController::class)->group(function () {
