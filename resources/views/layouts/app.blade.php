@@ -46,7 +46,6 @@
                             @endif
                             
                         @else
-
                             <li class="nav-item">
                                 <a href="{{route('dashboard')}}" class="nav-link">Map</a>
                             </li>

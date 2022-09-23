@@ -8,14 +8,19 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+                    @isset($url)
+                    <h1>Login {{$url}}</h1>
+                    <form method="POST" action='{{url("/login/admin")}}'>
+                    @else
                     <form method="POST" action="{{ route('login') }}">
+                    @endisset
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
+                            <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="" autofocus>
+                                <input id="username" type="text" name="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="" autofocus>
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +34,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

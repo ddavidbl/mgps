@@ -19,7 +19,8 @@ class CategorySeeder extends Seeder
 
         DB::table('categories')->insert([
             'kategori' => 'Ambulance',
-            'icon' => '',
+            'name' => '',
+            ''
         ]);
 
         DB::table('categories')->insert([

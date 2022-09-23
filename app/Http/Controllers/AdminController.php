@@ -10,23 +10,29 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
-
     public function viewUser($id)
     {
         $user = User::find($id);
-        $logs = Servicelog::select('id', 'id_kendaraan', 'catatan_servis')->where('id_kendaraan', $id)->get();
-        $render_log = view('admin.log', compact('logs'))->render();
+        $service_log = Servicelog::select('id', 'catatan_servis')->where('id_kendaraan', $id)->get();
         return response()->json([
             'status' => 200,
             'user' => $user,
-            'log' => $render_log,
+            'log' => $service_log,
         ]);
     }
 
+    public function log($id)
+    {
+        $log_data = Servicelog::select('id', 'catatan_servis')->where('id_kendaraan', $id)->get();
+        return response()->json([
+            'status' => 200,
+            'log' => $log_data,
+        ]);
+    }
 
     public function userList()
     {
-        $users = User::all()->where('role', '=', '2');
+        $users = User::all();
 
         $renderUser = view('admin.render', compact('users'))->render();
 
@@ -37,8 +43,7 @@ class AdminController extends Controller
 
     public function userIndex()
     {
-        $kategoris = Category::all();
-        return view('admin.user', compact('kategoris'));
+        return view('admin.user');
     }
 
     public function ikon($id)
@@ -71,7 +76,7 @@ class AdminController extends Controller
     public function newUser(Request $request)
     {
         $validate = Validator::make($request->all(), [
-            'username' => 'required|min:5',
+            'username' => 'required|min:5|string',
             'password' => 'required|min:8',
             'nomor_registrasi' => 'required|string|max:8|min:3',
             'nama_pemilik' => 'required|string|max:40|min:3',
@@ -81,11 +86,13 @@ class AdminController extends Controller
             'jenis' => 'required|string|min:3',
             'model' => 'required|string|min:3',
             'tahun_pembuatan' => 'required',
-            'nomor_rankaian' => 'required',
+            'nomor_rangkaian' => 'required',
             'nomor_mesin' => 'required',
             'warna' => 'required|string',
             'warna_tnkb' => 'required|string',
             'bahan_bakar' => 'required|string',
+            'kategori' => 'required',
+            'path' => 'required',
         ]);
 
         if ($validate->fails()) {
@@ -110,6 +117,8 @@ class AdminController extends Controller
             $user->warna = $request->input('warna');
             $user->warna_tnkb = $request->input('warna_tnkb');
             $user->bahan_bakar = $request->input('bahan_bakar');
+            $user->kategori = $request->input('kategori');
+            $user->path = $request->input('path');
             $user->save();
             return response()->json([
                 'status' => 200,
@@ -199,8 +208,6 @@ class AdminController extends Controller
     }
 
 
-
-
     public function editLog($id)
     {
         $service_log = Servicelog::find($id);
@@ -225,5 +232,47 @@ class AdminController extends Controller
             'status' => 200,
             'message' => 'Log Deleted Successfully',
         ]);
+    }
+
+    // Category
+
+    public function renderCategory()
+    {
+        $kategoris = Category::all();
+        $render_category = view('admin.categorys', compact('kategoris'))->render();
+
+        return response()->json([
+            'categorys' => $render_category,
+        ]);
+    }
+
+    public function newCategory(Request $request)
+    {
+        $validate = Validator::make($request->all(), [
+            'new_kategori' => 'required',
+            'image' => 'required|image|mimes:png,jpg,svg|max:2048'
+        ]);
+
+        if ($validate->fails()) {
+            return response()->json([
+                'status' => 400,
+                'errors' => $validate->errors(),
+            ]);
+        } else {
+
+            $name = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->store('public/icon');
+
+            $category = new Category;
+            $category->kategori = $request->input('new_kategori');
+            $category->name = $name;
+            $category->path = $path;
+            $category->save();
+
+            return response()->json([
+                'status' => 200,
+                'alert' => 'Category Added Successfully',
+            ]);
+        }
     }
 }
