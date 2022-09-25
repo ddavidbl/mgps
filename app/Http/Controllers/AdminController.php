@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Servicelog;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -103,7 +104,7 @@ class AdminController extends Controller
         } else {
             $user = new User;
             $user->username = $request->input('username');
-            $user->password = $request->input('password');
+            $user->password = Hash::make($request->input('password'));
             $user->nomor_registrasi = $request->input('nomor_registrasi');
             $user->nama_pemilik = $request->input('nama_pemilik');
             $user->alamat = $request->input('alamat');
@@ -261,7 +262,8 @@ class AdminController extends Controller
         } else {
 
             $name = $request->file('image')->getClientOriginalName();
-            $path = $request->file('image')->store('public/icon');
+            $path = $request->file('image')->store('/icon', 'public');
+
 
             $category = new Category;
             $category->kategori = $request->input('new_kategori');

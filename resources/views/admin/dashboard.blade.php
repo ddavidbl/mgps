@@ -12,6 +12,7 @@
 @push('child-script')
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script>
+    
         var map = L.map('map').setView([-1.23320750,116.89610100], 19);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -34,22 +35,31 @@ var render = function(){
                     var lat = value.lat;
                     var lng = value.lng;
                     
-                    if(lat== null && lng == null){
-                        var lat = null;
-                        var lng = null;
-                    }else{
-                        if(role == 2 ){
-                            var icon = "{{asset('img/police-station-pin.png')}}";
-                        };
+                    // var icon = `{{URL::to('/')}}/`+value.path;
+                    var icon = `{{asset('storage/')}}/`+value.path;
+                    console.log(icon);
+                    // if(icon = true){
                         var rIcon = L.icon({
-                            iconUrl:icon,
+                            iconUrl: icon,
                             iconAnchor:[16,32],
                             popupAnchor:[0,-32],
                         });
                             var marker = L.marker([lat, lng],{icon:rIcon}).addTo(map)
                             .bindPopup(popup);
+                        
+                    // }
+
+                    // if( !lat && !lng){
+                    //     lat = null;
+                    //     lng = null;
+                    // }
+                    // else{
+                        
+                    //     
+                    // }
+                        
                             
-                    }
+                    
                     
                 });
             }
@@ -58,7 +68,6 @@ var render = function(){
     });
     }
     render(); 
-
 
 
 

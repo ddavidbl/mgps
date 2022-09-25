@@ -4,4 +4,4 @@
     <option class="" value="{{$kategori->id}}">{{$kategori->kategori}}</option>
     @endforeach
 </select>
-<input type="text" class="form-control" id="path" name="path" value="">
+<input type="text" class="form-control d-none" id="path" name="path" value="">
