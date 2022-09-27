@@ -48,9 +48,12 @@ Route::middleware('auth:admin')->controller(AdminController::class)->group(funct
     Route::get('/delete/user/{id}', 'deleteuser')->name('DeleteUser');
 
     Route::post('/add/category', 'newCategory')->name('newCategory');
-    Route::get("/categorys", 'renderCategory')->name('renderCategory');
+    Route::get('/categorys', 'renderCategory')->name('renderCategory');
+    Route::get('/category_list', 'categoryList')->name('category_list');
 });
 
 
 Route::middleware('auth')->controller(TrackController::class)->group(function () {
+    Route::get('/track', 'trackIndex')->name('track');
+    Route::patch('/update/{id}', 'update')->name('update');
 });

@@ -10,7 +10,8 @@ class TrackController extends Controller
 {
     public function trackIndex()
     {
-        return view('user.index');
+        $user = User::find(Auth::user()->id);
+        return view('user.index', compact('user'));
     }
 
     public function update(Request $request, $id)

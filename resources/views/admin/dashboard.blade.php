@@ -23,51 +23,36 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var render = function(){
         $(document).ready(function () {
         $.ajax({
-            type: "get",
+            type: "GET",
             url: "{{route('render')}}",
             dataType: "json",
             success: function (data) {
                 $.each(data, function (marker, value) { 
-                    var role = value.role;
 
                     var popup = `${value.name}`; // add card to this popup small one
 
                     var lat = value.lat;
                     var lng = value.lng;
                     
-                    // var icon = `{{URL::to('/')}}/`+value.path;
                     var icon = `{{asset('storage/')}}/`+value.path;
-                    console.log(icon);
-                    // if(icon = true){
+                
                         var rIcon = L.icon({
                             iconUrl: icon,
                             iconAnchor:[16,32],
                             popupAnchor:[0,-32],
                         });
                             var marker = L.marker([lat, lng],{icon:rIcon}).addTo(map)
-                            .bindPopup(popup);
-                        
-                    // }
-
-                    // if( !lat && !lng){
-                    //     lat = null;
-                    //     lng = null;
-                    // }
-                    // else{
-                        
-                    //     
-                    // }
-                        
-                            
-                    
-                    
+                            .bindPopup(popup);                    
                 });
             }
-            
         });
     });
     }
     render(); 
+
+    setInterval(() => {
+        render();
+    }, 3000);
 
 
 

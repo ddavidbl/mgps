@@ -159,10 +159,25 @@ class AdminController extends Controller
             $user = User::find($id);
             if ($user) {
                 //data
+                $user->nomor_registrasi = $request->input('nomor_registrasi_update');
+                $user->nama_pemilik = $request->input('nama_pemilik_update');
+                $user->alamat = $request->input('alamat_update');
+                $user->merk = $request->input('merk_update');
+                $user->tipe = $request->input('tipe_update');
+                $user->jenis = $request->input('jenis_update');
+                $user->model = $request->input('model_update');
+                $user->tahun_pembuatan = $request->input('tahun_pembuatan_update');
+                $user->nomor_rangkaian = $request->input('nomor_rangkaian_update');
+                $user->nomor_mesin = $request->input('nomor_mesin_update');
+                $user->warna = $request->input('warna_update');
+                $user->warna_tnkb = $request->input('warna_tnkb_update');
+                $user->bahan_bakar = $request->input('bahan_bakar_update');
+                $user->kategori = $request->input('kategori_update');
+                $user->path = $request->input('path_update');
                 $user->update();
                 return response()->json([
                     'status' => 200,
-                    'message' => 'User',
+                    'message' => 'User Data Updated Successfully',
                 ]);
             } else {
                 return response()->json([
@@ -171,6 +186,15 @@ class AdminController extends Controller
                 ]);
             }
         }
+    }
+
+    public function categoryList()
+    {
+        $categorys = Category::all();
+        $categorys_table = view('admin.category-render', compact('categorys'))->render();
+        return response()->json([
+            'category_list' => $categorys_table,
+        ]);
     }
 
     public function deleteuser($id)

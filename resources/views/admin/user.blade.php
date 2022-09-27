@@ -5,21 +5,143 @@
         
             <div class="row">
                 <div class="d-flex align-items-start">
+                    {{-- Side Nav Bar --}}
+                        <div class=" p-1 col-2 nav flex-column nav-pills me-3 min-vh-100  rounded shadow bg-body align-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <button class="nav-link shadow active  mt-4 w-75" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">User</button>
+                            <button class="nav-link shadow  mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">New User</button>
+                            <button class="nav-link shadow mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category">Category</button>
+                        </div>
 
-                    <div class=" p-1 col-2 nav flex-column nav-pills me-3 min-vh-100  rounded shadow bg-body align-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link shadow active  mt-4 w-75" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">User</button>
-                        <button class="nav-link shadow  mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">New User</button>
-                        <button class="nav-link shadow mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category">Category</button>
-                    </div>
+                        <div class="rounded shadow bg-body align-content-center tab-content col-10 p-4 vh-100 overflow-scroll" id="v-pills-tabContent">
 
-                    <div class="rounded shadow bg-body align-content-center tab-content col-10 p-4 vh-100 overflow-scroll" id="v-pills-tabContent">
+                    {{-- Edit Modal --}}
+                        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                            <div class=" modal-dialog  modal-fullscreen">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editModalLabel">Edit User</span></h5>
+                                        <input type="hidden" class="d-none" id="user_id_value_edit" value="">
+                                        <button type="button" class="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card mb-2">
+                                                <div class="card-header">
+                                                Data Kendaraan
+                                                </div>
+                                                <div class="card-body row">
+                                                    <div class="col">
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_nomor_registrasi" class="col-3 col-form-label">Nomor Registrasi</label>
+                                                            <div class="col-4">
+                                                                <input type="text"  value="" id="edit_nomor_registrasi" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_nama_pemilik" class="col-3 col-form-label">Nama Pemilik</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_nama_pemilik" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_alamat" class="col-3 col-form-label">Alamat</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_alamat" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_merk" class="col-3 col-form-label">Merk</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_merk" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_tipe" class="col-3 col-form-label">Tipe</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_tipe" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_jenis" class="col-3 col-form-label">Jenis</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_jenis" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_model" class="col-3 col-form-label">Model</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_model" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col">
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_tahun_pembuatan" class="col-3 col-form-label">Tahun Pembuatan</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_tahun_pembuatan" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_nomor_rangkaian" class="col-3 col-form-label">Nomor Rangkaian</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_nomor_rangkaian" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_nomor_mesin" class="col-3 col-form-label">Nomor Mesin</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_nomor_mesin" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_warna" class="col-3 col-form-label">Warna</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_warna" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_warna_tnkb" class="col-3 col-form-label">Warna TNKB</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_warna_tnkb" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-1">
+                                                            <label for="edit_bahan_bakar" class="col-3 col-form-label">Bahan Bakar</label>
+                                                            <div class="col-4">
+                                                                <input type="text" value="" id="edit_bahan_bakar" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>                                         
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary" id="updateBtn">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     {{-- View Modal --}}
-                            <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
                                 <div class=" modal-dialog  modal-fullscreen">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="editModalLabel">User: <span id="id_view_user"></span></h5>
+                                            <h5 class="modal-title" id="viewModalLabel">View User: <span id="id_view_user"></span></h5>
                                             <input type="hidden" class="d-none" id="user_id_value" value="">
                                             <button type="button" class="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
                                         </div>
@@ -221,9 +343,9 @@
 
                                         <div class="mb-3 row">
                                             <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
-                                        <div class="col-sm-10" id="renderCategory">
+                                                <div class="col-sm-10" id="renderCategory">
                                             
-                                        </div>
+                                                </div>
                                         </div>
 
                                         <div class="mb-3 row">
@@ -327,35 +449,37 @@
                             </div>
                         </div>
 
-                        {{-- Category --}}
+                    {{-- Category --}}
                         <div class="tab-pane fade" id="v-pills-category" role="tabpanel" aria-labelledby="v-pills-category-tab" tabindex="0">
-                            <div class="rounded shadow w-auto p-4">
-                                <h3 class="text-center">Add New Category</h3>
+                                <div class="rounded shadow w-auto p-4">
+                                    <h3 class="text-center">Add New Category</h3>
 
-                                <form action="" method="POST" enctype="multipart/form-data" id="categoryForm">
-                                    <div class="p-2 mt-2">
-                                        <div class="mb-3 row">
-                                            <label for="kategori" class="col-form-label col-sm-2">Kategori</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" name="new_kategori" id="new_kategori" class="form-control">
-                                                <ul class="imagealert"></ul>
+                                    <form action="" method="POST" enctype="multipart/form-data" id="categoryForm">
+                                        <div class="p-2 mt-2">
+                                            <div class="mb-3 row">
+                                                <label for="kategori" class="col-form-label col-sm-2">Kategori</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" name="new_kategori" id="new_kategori" class="form-control">
+                                                    <ul class="imagealert"></ul>
+                                                </div>
                                             </div>
-                                        </div>
-    
-                                        <div class="mb-3 row">
-                                            <label for="image" class="col-sm-2 col-form-label">Ikon</label>
-                                            <div class="col-sm-10">
-                                                <input type="file" name="image" id="image" class="form-control">
-                                                <ul class="list-unstyled" id="imagealert"></ul>
+        
+                                            <div class="mb-3 row">
+                                                <label for="image" class="col-sm-2 col-form-label">Ikon</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" name="image" id="image" class="form-control">
+                                                    <ul class="list-unstyled" id="imagealert"></ul>
+                                                </div>
                                             </div>
-                                        </div>
-    
-                                        <div class="mb-3-row">
-                                            <button type="submit" id="newCategoryBtn" class="btn btn-success col-10 offset-2">Submit</button>
-                                        </div>
-                                </form>
+        
+                                            <div class="mb-3-row">
+                                                <button type="submit" id="newCategoryBtn" class="btn btn-success col-10 offset-2">Submit</button>
+                                            </div>
+                                    </form>
 
                                 </div>
+
+                                <div class="rounded border border-1 p-4 mt-4" id="categoryList"></div>
                             </div>
                         </div>
 
@@ -369,6 +493,22 @@
 @push('child-script')
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script>
+// Category List 
+    var list_category = function(){
+        $(document).ready(function(){
+            $.ajax({
+                type: "GET",
+                url: "{{route('category_list')}}",
+                data: "data",
+                dataType: "json",
+                success: function (response) {
+                    $('#categoryList').html(response.category_list);
+                }
+            });
+        })
+    }
+
+    list_category();
 
 // Close Button
     $(document).on('click','.btn-close', function(e){
@@ -397,7 +537,7 @@
         }
     });
     });
-    }  
+    };
     
     render_category();
 
@@ -487,7 +627,7 @@
     }
     render_user();
 
-// Create Modal
+// Create TAB
 
     $(document).on('click','#submitBtn', function (e) {
         e.preventDefault();
@@ -585,24 +725,71 @@
         $('#editModal').modal('show');
         $.ajax({
             type: "GET",
-            url: "",
+            url: "/view/"+user_id,
             success: function (response) {
-                if(response.status==500){
-                    $('').html("");
-                    $(selector).removeClass(className);
-                    $(selector).addClass(className);
-                    $(selector).append(content);
-                }
-                else{
-                    $(selector).text(textString);
-                    $(selector).val();
-                    $(selector).val();
-                }
+                $('#edit_nomor_registrasi').val(response.user.nomor_registrasi);
+                $('#edit_nama_pemilik').val(response.user.nama_pemilik);
+                $('#edit_alamat').val(response.user.alamat);
+                $('#edit_merk').val(response.user.merk);
+                $('#edit_tipe').val(response.user.tipe);
+                $('#edit_jenis').val(response.user.jenis);
+                $('#edit_model').val(response.user.model);
+                $('#edit_tahun_pembuatan').val(response.user.tahun_pembuatan);
+                $('#edit_nomor_rangkaian').val(response.user.nomor_rangkaian);
+                $('#edit_nomor_mesin').val(response.user.nomor_mesin);
+                $('#edit_warna').val(response.user.warna);
+                $('#edit_warna_tnkb').val(response.user.warna_tnkb);
+                $('#edit_bahan_bakar').val(response.user.bahan_bakar);
             }
         });
     });
 
-    // Search Box
+
+
+//Update Data
+    $(document).on('click','#updateBtn', function (e) {
+        e.preventDefault();
+        var user_id_update = $(this).val();
+        var update_user = {
+            'username':$('#username_update').val(),
+            'password':$('#password_update').val(),
+            'nomor_registrasi':$('#nomor_registrasi_update').val(),
+            'nama_pemilik':$('#nama_pemilik_update').val(),
+            'alamat':$('#alamat_update').val(),
+            'merk':$('#merk_update').val(),
+            'tipe':$('#tipe_update').val(),
+            'jenis':$('#jenis_update').val(),
+            'model':$('#model_update').val(),
+            'tahun_pembuatan':$('#tahun_pembuatan_update').val(),
+            'nomor_rangkaian':$('#nomor_rangkaian_update').val(),
+            'nomor_mesin':$('#nomor_mesin_update').val(),
+            'warna':$('#warna_update').val(),
+            'warna_tnkb':$('#warna_tnkb_update').val(),
+            'bahan_bakar':$('#bahan_bakar_update').val(),
+        };
+
+        $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+        $.ajax({
+            type: "Patch",
+            url: "/route/"+user_id_update,
+            data: update_user,
+            dataType: "json",
+            success: function (response) {
+                if(response.status == 400){
+                    
+                }
+                else if(response.status == 200){
+
+                }
+            }
+        });
+    });
+// Search Box
         $(document).ready(function () {
                 $('#searchBox').on("keyup",function(){
                     var value = $(this).val().toLowerCase();
@@ -612,7 +799,7 @@
                 });
             });
 
-    // New Category
+// New Category
         $(document).ready(function () {
 
             $.ajaxSetup({
@@ -634,6 +821,7 @@
                     success: function (response) {
                         $('#categoryForm').find('input').val("");
                         render_category();
+                        list_category();
                     }
                 });
             })
