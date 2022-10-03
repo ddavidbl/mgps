@@ -147,44 +147,47 @@ class AdminController extends Controller
     public function updateuser(Request $request, $id)
     {
         $validate = Validator::make($request->all(), [
-            //data
+            'nomor_registrasi' => 'required|string|max:8|min:3',
+            'nama_pemilik' => 'required|string|max:40|min:3',
+            'alamat' => 'required|string|min:5',
+            'merk' => 'required|string|min:3',
+            'tipe' => 'required|string|min:3',
+            'jenis' => 'required|string|min:3',
+            'model' => 'required|string|min:3',
+            'tahun_pembuatan' => 'required',
+            'nomor_rangkaian' => 'required',
+            'nomor_mesin' => 'required',
+            'warna' => 'required|string',
+            'warna_tnkb' => 'required|string',
+            'bahan_bakar' => 'required|string',
         ]);
+
 
         if ($validate->fails()) {
             return response()->json([
                 'status' => 400,
-                'message' => $validate->errors(),
+                'errors' => $validate->errors(),
             ]);
         } else {
-            $user = User::find($id);
-            if ($user) {
-                //data
-                $user->nomor_registrasi = $request->input('nomor_registrasi_update');
-                $user->nama_pemilik = $request->input('nama_pemilik_update');
-                $user->alamat = $request->input('alamat_update');
-                $user->merk = $request->input('merk_update');
-                $user->tipe = $request->input('tipe_update');
-                $user->jenis = $request->input('jenis_update');
-                $user->model = $request->input('model_update');
-                $user->tahun_pembuatan = $request->input('tahun_pembuatan_update');
-                $user->nomor_rangkaian = $request->input('nomor_rangkaian_update');
-                $user->nomor_mesin = $request->input('nomor_mesin_update');
-                $user->warna = $request->input('warna_update');
-                $user->warna_tnkb = $request->input('warna_tnkb_update');
-                $user->bahan_bakar = $request->input('bahan_bakar_update');
-                $user->kategori = $request->input('kategori_update');
-                $user->path = $request->input('path_update');
-                $user->update();
-                return response()->json([
-                    'status' => 200,
-                    'message' => 'User Data Updated Successfully',
-                ]);
-            } else {
-                return response()->json([
-                    'status' => 404,
-                    'message' => 'User Not Found'
-                ]);
-            }
+            $user_edit = User::find($id);
+            $user_edit->nomor_registrasi = $request->input('nomor_registrasi');
+            $user_edit->nama_pemilik = $request->input('nama_pemilik');
+            $user_edit->alamat = $request->input('alamat');
+            $user_edit->merk = $request->input('merk');
+            $user_edit->tipe = $request->input('tipe');
+            $user_edit->jenis = $request->input('jenis');
+            $user_edit->model = $request->input('model');
+            $user_edit->tahun_pembuatan = $request->input('tahun_pembuatan');
+            $user_edit->nomor_rangkaian = $request->input('nomor_rangkaian');
+            $user_edit->nomor_mesin = $request->input('nomor_mesin');
+            $user_edit->warna = $request->input('warna');
+            $user_edit->warna_tnkb = $request->input('warna_tnkb');
+            $user_edit->bahan_bakar = $request->input('bahan_bakar');
+            $user_edit->update();
+            return response()->json([
+                'status' => 200,
+                'message' => 'User Data Updated Successfully',
+            ]);
         }
     }
 

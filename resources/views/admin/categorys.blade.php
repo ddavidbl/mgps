@@ -5,3 +5,6 @@
     @endforeach
 </select>
 <input type="text" class="form-control d-none" id="path" name="path" value="">
+<ul class="list-unstyled" id="kategori_alert">
+
+</ul>

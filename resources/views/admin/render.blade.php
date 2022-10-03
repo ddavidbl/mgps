@@ -15,6 +15,7 @@
                     <div class="">
                         <button class="btn btn-primary" id="openView" value="{{$user->id}}"><img src="{{asset('img/view-white.png')}}" alt=""> View</button>
                         <button class="btn btn-warning" id="openEdit" value="{{$user->id}}"><img src="{{asset('img/edit-white.png')}}" alt=""> Edit</button>
+                        <button class="btn btn-secondary" id="openLog" value="{{$user->id}}"><img src="" alt="">Service</button>
                         <button class="btn btn-danger" id="openDelete" value="{{$user->id}}"><img src="" alt=""><img src="{{asset('img/trash-white.png')}}" alt=""> Delete</button>
                     </div>
                 </td>

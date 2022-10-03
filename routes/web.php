@@ -19,15 +19,10 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/home', function () {
-    return view('welcome');
-});
-
-
 
 Auth::routes();
 
-Route::get('/login/admin', [LoginController::class, 'AdminLoginForm']);
+Route::get('/login/admin', [LoginController::class, 'AdminLoginForm'])->name('loginAdmin');
 Route::post('/login/admin', [LoginController::class, 'Adminlogin']);
 
 
@@ -44,7 +39,7 @@ Route::middleware('auth:admin')->controller(AdminController::class)->group(funct
 
     Route::post('/new/user', 'newUser')->name('NewUser');
     Route::get('/edit/user/{id}', 'editUser')->name('EditUser');
-    Route::patch('/update/user/{id}' . 'updateuser')->name('UpdateUser');
+    Route::patch('/update/user/{id}', 'updateuser')->name('UpdateUser');
     Route::get('/delete/user/{id}', 'deleteuser')->name('DeleteUser');
 
     Route::post('/add/category', 'newCategory')->name('newCategory');

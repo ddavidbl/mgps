@@ -24,6 +24,12 @@
                                         <button type="button" class="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
+
+                                        <div class="alert alert-success" id="success-edit-alert">
+                                            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+                                            <strong>Sukses </strong> Memperbaharui Data.
+                                        </div>
+
                                         <div class="card mb-2">
                                                 <div class="card-header">
                                                 Data Kendaraan
@@ -32,51 +38,58 @@
                                                     <div class="col">
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_nomor_registrasi" class="col-3 col-form-label">Nomor Registrasi</label>
+                                                            <label for="nomor_registrasi_edit" class="col-3 col-form-label">Nomor Registrasi</label>
                                                             <div class="col-4">
-                                                                <input type="text"  value="" id="edit_nomor_registrasi" class="form-control">
+                                                                <input type="text" id="nomor_registrasi_edit" name="nomor_registrasi_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="nomor_registrasi_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_nama_pemilik" class="col-3 col-form-label">Nama Pemilik</label>
+                                                            <label for="nama_pemilik_edit" class="col-3 col-form-label">Nama Pemilik</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_nama_pemilik" class="form-control">
+                                                                <input type="text" id="nama_pemilik_edit" name="nama_pemilik_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="nama_pemilik_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_alamat" class="col-3 col-form-label">Alamat</label>
+                                                            <label for="alamat_edit" class="col-3 col-form-label">Alamat</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_alamat" class="form-control">
+                                                                <input type="text"  id="alamat_edit" name="alamat_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="alamat_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_merk" class="col-3 col-form-label">Merk</label>
+                                                            <label for="merk_edit" class="col-3 col-form-label">Merk</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_merk" class="form-control">
+                                                                <input type="text"  id="merk_edit" name="merk_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="merk_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_tipe" class="col-3 col-form-label">Tipe</label>
+                                                            <label for="tipe_edit" class="col-3 col-form-label">Tipe</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_tipe" class="form-control">
+                                                                <input type="text"  id="tipe_edit" name="tipe_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="tipe_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_jenis" class="col-3 col-form-label">Jenis</label>
+                                                            <label for="jenis_edit" class="col-3 col-form-label">Jenis</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_jenis" class="form-control">
+                                                                <input type="text" value="" id="jenis_edit" name="jenis_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="jenis_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_model" class="col-3 col-form-label">Model</label>
+                                                            <label for="model_edit" class="col-3 col-form-label">Model</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_model" class="form-control">
+                                                                <input type="text" value="" id="model_edit" name="model_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="model_edit_alert"></ul>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -84,44 +97,50 @@
                                                     <div class="col">
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_tahun_pembuatan" class="col-3 col-form-label">Tahun Pembuatan</label>
+                                                            <label for="tahun_pembuatan_edit" class="col-3 col-form-label">Tahun Pembuatan</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_tahun_pembuatan" class="form-control">
+                                                                <input type="text" value="" id="tahun_pembuatan_edit" name="tahun_pembuatan_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="tahun_pembuatan_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_nomor_rangkaian" class="col-3 col-form-label">Nomor Rangkaian</label>
+                                                            <label for="nomor_rangkaian_edit" class="col-3 col-form-label">Nomor Rangkaian</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_nomor_rangkaian" class="form-control">
+                                                                <input type="text" value="" id="nomor_rangkaian_edit" name="nomor_rangkaian_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="nomor_rangkaian_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_nomor_mesin" class="col-3 col-form-label">Nomor Mesin</label>
+                                                            <label for="nomor_mesin_edit" class="col-3 col-form-label">Nomor Mesin</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_nomor_mesin" class="form-control">
+                                                                <input type="text" value="" id="nomor_mesin_edit" name="nomor_mesin_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="nomor_mesin_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_warna" class="col-3 col-form-label">Warna</label>
+                                                            <label for="warna_edit" class="col-3 col-form-label">Warna</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_warna" class="form-control">
+                                                                <input type="text" value="" id="warna_edit" name="warna_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="warna_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_warna_tnkb" class="col-3 col-form-label">Warna TNKB</label>
+                                                            <label for="warna_tnkb_edit" class="col-3 col-form-label">Warna TNKB</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_warna_tnkb" class="form-control">
+                                                                <input type="text" value="" id="warna_tnkb_edit" name="warna_tnkb_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="warna_tnkb_edit_alert"></ul>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="edit_bahan_bakar" class="col-3 col-form-label">Bahan Bakar</label>
+                                                            <label for="bahan_bakar_edit" class="col-3 col-form-label">Bahan Bakar</label>
                                                             <div class="col-4">
-                                                                <input type="text" value="" id="edit_bahan_bakar" class="form-control">
+                                                                <input type="text" value="" id="bahan_bakar_edit" name="bahan_bakar_edit" class="form-control">
+                                                                <ul class="list-unstyled" id="bahan_bakar_edit_alert"></ul>
                                                             </div>
                                                         </div>
                                                     </div>                                         
@@ -130,7 +149,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary" id="updateBtn">Update</button>
+                                        <button type="submit" class="btn btn-primary" id="update_Btn">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -299,8 +318,32 @@
                                 </div>
                             </div>
 
+                    {{-- Service Modal --}}
+                        <div class="modal fade" id="ServiceModal" tabindex="-1" aria-labelledby="ServiceModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="text-center">Pencatatan Servis Kendaraan</h3>
+                                    </div>
 
-                    {{-- Render User Data --}}
+                                    <div class="modal-body">
+                                        <div class="mb-3 row">
+                                            <label for="" class=""></label>
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="modal-footer">
+                                        <button type="button" data-bs-dismiss="modal" class="btn btn-seconday">Close</button>
+                                        <button type="button" id="addLogBtn" class="btn btn-primary">Tambahkan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {{-- Render User Data Tab--}}
                         <div class="tab-pane fade active show" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab" tabindex="0">
                             <form class="d-flex" role="search">
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBox">
@@ -311,7 +354,7 @@
                             </div>
                         </div>
 
-                    {{-- Add User Data --}}
+                    {{-- Add User Data Tab--}}
                         <div class="tab-pane fade  " id="v-pills-form" role="tabpanel" aria-labelledby="v-pills-form-tab" tabindex="0">
                             <div class="rounded shadow w-auto p-4 ">
                                 <h3 class="text-center">Add New User Form</h3>
@@ -319,7 +362,7 @@
 
 
                                 <div class="p-2 mt-2">
-                                    <div class="mb-4 row">
+                                    <div class="my-4 row">
                                         <h4>Data Login</h4>
                                         <div class="mb-3 row">
                                             <label for="username" class="col-sm-2 col-form-label">Username</label>
@@ -338,13 +381,13 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="mb-2 row">
+                                    <div class="my-2 row">
                                         <h4>Data Kendaraan</h4>
 
                                         <div class="mb-3 row">
                                             <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
                                                 <div class="col-sm-10" id="renderCategory">
-                                            
+                                                
                                                 </div>
                                         </div>
 
@@ -352,6 +395,7 @@
                                             <label for="nomor_registrasi" class="col-sm-2 col-form-label">Nomor Registrasi</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="nomor_registrasi" name="nomor_registrasi" required>
+                                                <ul class="list-unstyled" id="nomor_registrasi_alert"></ul>
                                             </div>
                                         </div>
 
@@ -359,6 +403,7 @@
                                             <label for="nama_pemilik" class="col-sm-2 col-form-label">Name Pemilik</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="nama_pemilik" name="nama_pemilik" required>
+                                                <ul class="list-unstyled" id="nama_pemilik_alert"></ul>
                                             </div>
                                         </div>
 
@@ -366,7 +411,7 @@
                                             <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="alamat" name="alamat" required>
-
+                                                <ul class="list-unstyled" id="alamat_alert"></ul>
                                             </div>
                                         </div>
 
@@ -374,6 +419,7 @@
                                             <label for="merk" class="col-sm-2 col-form-label">Merk</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="merk" name="merk" required>
+                                                <ul class="list-unstyled" id="merk_alert"></ul>
                                             </div>
                                         </div>
 
@@ -381,6 +427,7 @@
                                             <label for="tipe" class="col-sm-2 col-form-label">Tipe</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="tipe" name="tipe" required>
+                                                <ul class="list-unstyled" id="tipe_alert"></ul>
                                             </div>
                                         </div>
 
@@ -388,7 +435,7 @@
                                             <label for="jenis" class="col-sm-2 col-form-label">Jenis</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="jenis" name="jenis" required>
-
+                                                <ul class="list-unstyled" id="jenis_alert"></ul>
                                             </div>
                                         </div>
 
@@ -396,6 +443,7 @@
                                             <label for="model" class="col-sm-2 col-form-label">Model</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="model" name="model" required>
+                                                <ul class="list-unstyled" id="model_alert"></ul>
                                             </div>
                                         </div>
 
@@ -403,6 +451,7 @@
                                             <label for="tahun_pembuatan" class="col-sm-2 col-form-label">Tahun Pembuatan</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="tahun_pembuatan" name="tahun_pembuatan" required>
+                                                <ul class="list-unstyled" id="tahun_pembuatan_alert"></ul>
                                             </div>
                                         </div>
 
@@ -410,6 +459,7 @@
                                             <label for="nomor_rangkaian" class="col-sm-2 col-form-label">Nomor Rangkaian</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="nomor_rangkaian" name="nomor_rangkaian" required>
+                                                <ul class="list-unstyled" id="nomor_rangkaian_alert"></ul>
                                             </div>
                                         </div>
 
@@ -417,6 +467,7 @@
                                             <label for="nomor_mesin" class="col-sm-2 col-form-label">Nomor Mesin</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="nomor_mesin" name="nomor_mesin" required>
+                                                <ul class="list-unstyled" id="nomor_mesin_alert"></ul>
                                             </div>
                                         </div>
 
@@ -424,6 +475,7 @@
                                             <label for="warna" class="col-sm-2 col-form-label">Warna</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="warna" name="warna">
+                                                <ul class="list-unstyled" id="warna_alert"></ul>
                                             </div>
                                         </div>
 
@@ -431,7 +483,7 @@
                                             <label for="warna_tnkb" class="col-sm-2 col-form-label">Warna TNKB</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="warna_tnkb" name="warna_tnkb" required>
-
+                                                <ul class="list-unstyled" id="warna_tnkb_alert"></ul>
                                             </div>
                                         </div>
                                         
@@ -439,9 +491,16 @@
                                             <label for="bahan_bakar" class="col-sm-2 col-form-label">Bahan Bakar</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="bahan_bakar" name="bahan_bakar" required>
+                                                <ul class="list-unstyled" id="bahan_bakar_alert"></ul>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="alert alert-success" id="success-alert">
+                                        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+                                        <strong>Sukses </strong> Menambahkan User Baru.
+                                    </div>
+
                                     <div class="row flex">
                                         <button class="btn btn-primary" type="submit" id="submitBtn">Submit Data</button>
                                     </div>
@@ -449,7 +508,7 @@
                             </div>
                         </div>
 
-                    {{-- Category --}}
+                    {{-- Category Tab --}}
                         <div class="tab-pane fade" id="v-pills-category" role="tabpanel" aria-labelledby="v-pills-category-tab" tabindex="0">
                                 <div class="rounded shadow w-auto p-4">
                                     <h3 class="text-center">Add New Category</h3>
@@ -460,7 +519,7 @@
                                                 <label for="kategori" class="col-form-label col-sm-2">Kategori</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" name="new_kategori" id="new_kategori" class="form-control">
-                                                    <ul class="imagealert"></ul>
+                                                    <ul class="list-unstyled" id="new_kategori_alert"></ul>
                                                 </div>
                                             </div>
         
@@ -468,8 +527,13 @@
                                                 <label for="image" class="col-sm-2 col-form-label">Ikon</label>
                                                 <div class="col-sm-10">
                                                     <input type="file" name="image" id="image" class="form-control">
-                                                    <ul class="list-unstyled" id="imagealert"></ul>
+                                                    <ul class="list-unstyled" id="image_alert"></ul>
                                                 </div>
+                                            </div>
+
+                                            <div class="alert alert-success" id="success-update-alert">
+                                                <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+                                                <strong>Sukses </strong> Menambahkan Kategori Baru.
                                             </div>
         
                                             <div class="mb-3-row">
@@ -483,6 +547,7 @@
                             </div>
                         </div>
 
+                        
                     </div>
                 </div>
             </div>
@@ -510,6 +575,13 @@
 
     list_category();
 
+// Tab Button
+    $(document).on('click','#v-pills-tab .nav-link',function(e){
+        e.preventDefault();
+        $('#v-pills-form input').val("");
+        $('#v-pills-form ul').html("");
+        $('#v-pills-form ul').removeClass('alert alert-danger');
+    });
 // Close Button
     $(document).on('click','.btn-close', function(e){
         e.preventDefault();
@@ -627,8 +699,8 @@
     }
     render_user();
 
-// Create TAB
-
+// New User Tab 
+    $("#success-alert").hide();
     $(document).on('click','#submitBtn', function (e) {
         e.preventDefault();
 
@@ -666,50 +738,80 @@
         success: function (response) {
             if(response.status == 400){
                 $('#v-pills-form').find('ul').html('');
-                
-                $('#usernamealert').addClass('alert alert-danger');
-                $('#passwordalert').addClass('alert alert-danger');
-                $('#nomor_registrasialert').addClass('alert alert-danger');
-                $('#nama_pemilikalert').addClass('alert alert-danger');
-                $('#alamatalert').addClass('alert alert-danger');
-                $('#merkalert').addClass('alert alert-danger');
-                $('#tipealert').addClass('alert alert-danger');
-                $('#jenisalert').addClass('alert alert-danger');
-                $('#modelalert').addClass('alert alert-danger');
-                $('#tahun_pembuatanalert').addClass('alert alert-danger');
-                $('#nomor_rangkaianalert').addClass('alert alert-danger');
-                $('#nomor_mesinalert').addClass('alert alert-danger');
-                $('#warnaalert').addClass('alert alert-danger');
-                $('#warna_tnkbalert').addClass('alert alert-danger');
-                $('#bahan_bakaralert').addClass('alert alert-danger');
+                    if(response.errors.username){
+                        $('#usernamealert').append('<li>'+response.errors.username+'</li>');
+                        $('#usernamealert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.password){
+                        $('#passwordalert').append('<li>'+response.errors.password+'</li>');
+                        $('#passwordalert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.kategori){
+                        $('#kategori_alert').append('<li>'+response.errors.kategori+'</li>')
+                        $('#kategori_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.nomor_registrasi){
+                        $('#nomor_registrasi_alert').append('<li>'+response.errors.nomor_registrasi+'</li>');
+                        $('#nomor_registrasi_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.nama_pemilik){
+                        $('#nama_pemilik_alert').append('<li>'+response.errors.nama_pemilik+'</li>');
+                        $('#nama_pemilik_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.alamat){
+                        $('#alamat_alert').append('<li>'+response.errors.alamat+'</li>');
+                        $('#alamat_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.merk){
+                        $('#merk_alert').append('<li>'+response.errors.merk+'</li>');
+                        $('#merk_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.tipe){
+                        $('#tipe_alert').append('<li>'+response.errors.tipe+'</li>');
+                        $('#tipe_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.jenis){
+                        $('#jenis_alert').addClass('alert alert-danger');
+                        $('#jenis_alert').append('<li>'+response.errors.jenis+'</li>');
+                    }
+                    if(response.errors.model){
+                        $('#model_alert').append('<li>'+response.errors.model+'</li>');
+                        $('#model_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.tahun_pembuatan){
+                        $('#tahun_pembuatan_alert').append('<li>'+response.errors.tahun_pembuatan+'</li>');
+                        $('#tahun_pembuatan_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.nomor_rangkaian){
+                        $('#nomor_rangkaian_alert').append('<li>'+response.errors.nomor_rangkaian+'</li>');
+                        $('#nomor_rangkaian_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.nomor_mesin){
+                        $('#nomor_mesin_alert').append('<li>'+response.errors.nomor_mesin+'</li>'); 
+                        $('#nomor_mesin_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.warna){
+                        $('#warna_alert').append('<li>'+response.errors.warna+'</li>');
+                        $('#warna_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.warna_tnkb){
+                        $('#warna_tnkb_alert').append('<li>'+response.errors.warna_tnkb+'</li>');  
+                        $('#warna_tnkb_alert').addClass('alert alert-danger');
+                    }
+                    if(response.errors.bahan_bakar){
+                        $('#bahan_bakar_alert').append('<li>'+response.errors.bahan_bakar+'</li>');
+                        $('#bahan_bakar_alert').addClass('alert alert-danger');
+                    }
 
-
-                $('#usernamealert').append('<li>'+response.errors.username+'</li>');
-                $('#passwordalert').append('<li>'+response.errors.password+'</li>');
-                $('#nomor_registrasialert').append('<li>'+response.errors.nomor_registrasi+'</li>');
-                $('#nama_pemilikalert').append('<li>'+response.errors.nama_pemilik+'</li>');
-                $('#alamatalert').append('<li>'+response.errors.alamat+'</li>');
-                $('#merkalert').append('<li>'+response.errors.merk+'</li>');
-                $('#tipealert').append('<li>'+response.errors.tipe+'</li>');
-                $('#jenisalert').append('<li>'+response.errors.jenis+'</li>');
-                $('#modelalert').append('<li>'+response.errors.model+'</li>');
-                $('#tahun_pembuatanalert').append('<li>'+response.errors.tahun_pembuatan+'</li>');
-                $('#nomor_rangkaianalert').append('<li>'+response.errors.nomor_rangkaian+'</li>');
-                $('#nomor_mesinalert').append('<li>'+response.errors.nomor_mesin+'</li>');
-                $('#warnaalert').append('<li>'+response.errors.warna+'</li>');
-                $('#warna_tnkb alert').append('<li>'+response.errors.warna_tnkb+'</li>');
-                $('#bahan_bakar').append('<li>'+response.errors.bahan_bakar+'</li>');
-                
-                console.log('error')
             }
             else if(response.status == 200){
-                $('#nomor_registrasialert','#nomor_registrasialert','#alamatalert',
-                '#merkalert','#tipealert','#jenisalert',
-                'modelalert','#tahun_pembuatanalert','#nomor_rangkaianalert',
-                '#nomor_mesinalert','#warnaalert','#warna_tnkbalert','#bahan_bakaralert','#usernamealert','#passwordalert')
-                .html('');
-                render_user();
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+                    $("#success-alert").slideUp(500);
+                });
+                $('#v-pills-form').find('ul').html('');
                 $('#v-pills-form').find('input').val('');
+                $('#v-pills-form').find('input').removeClass('alert alert-danger');
+                render_user();
             }
 
             
@@ -718,6 +820,8 @@
     });
 
 // Edit Modal
+    $('#success-edit-alert').hide();    
+
     $(document).on('click','#openEdit', function (e) {
         e.preventDefault();
         var user_id = $(this).val();
@@ -727,45 +831,41 @@
             type: "GET",
             url: "/view/"+user_id,
             success: function (response) {
-                $('#edit_nomor_registrasi').val(response.user.nomor_registrasi);
-                $('#edit_nama_pemilik').val(response.user.nama_pemilik);
-                $('#edit_alamat').val(response.user.alamat);
-                $('#edit_merk').val(response.user.merk);
-                $('#edit_tipe').val(response.user.tipe);
-                $('#edit_jenis').val(response.user.jenis);
-                $('#edit_model').val(response.user.model);
-                $('#edit_tahun_pembuatan').val(response.user.tahun_pembuatan);
-                $('#edit_nomor_rangkaian').val(response.user.nomor_rangkaian);
-                $('#edit_nomor_mesin').val(response.user.nomor_mesin);
-                $('#edit_warna').val(response.user.warna);
-                $('#edit_warna_tnkb').val(response.user.warna_tnkb);
-                $('#edit_bahan_bakar').val(response.user.bahan_bakar);
+                        $('#nomor_registrasi_edit').val(response.user.nomor_registrasi);
+                        $('#nama_pemilik_edit').val(response.user.nama_pemilik);
+                        $('#alamat_edit').val(response.user.alamat);
+                        $('#merk_edit').val(response.user.merk);
+                        $('#tipe_edit').val(response.user.tipe);
+                        $('#jenis_edit').val(response.user.jenis);
+                        $('#model_edit').val(response.user.model);
+                        $('#tahun_pembuatan_edit').val(response.user.tahun_pembuatan);
+                        $('#nomor_rangkaian_edit').val(response.user.nomor_rangkaian);
+                        $('#nomor_mesin_edit').val(response.user.nomor_mesin);
+                        $('#warna_edit').val(response.user.warna);
+                        $('#warna_tnkb_edit').val(response.user.warna_tnkb);
+                        $('#bahan_bakar_edit').val(response.user.bahan_bakar);
+                        $('#update_Btn').val(user_id);
             }
         });
     });
 
-
-
-//Update Data
-    $(document).on('click','#updateBtn', function (e) {
+    $(document).on('click','#update_Btn', function (e) {
         e.preventDefault();
-        var user_id_update = $(this).val();
-        var update_user = {
-            'username':$('#username_update').val(),
-            'password':$('#password_update').val(),
-            'nomor_registrasi':$('#nomor_registrasi_update').val(),
-            'nama_pemilik':$('#nama_pemilik_update').val(),
-            'alamat':$('#alamat_update').val(),
-            'merk':$('#merk_update').val(),
-            'tipe':$('#tipe_update').val(),
-            'jenis':$('#jenis_update').val(),
-            'model':$('#model_update').val(),
-            'tahun_pembuatan':$('#tahun_pembuatan_update').val(),
-            'nomor_rangkaian':$('#nomor_rangkaian_update').val(),
-            'nomor_mesin':$('#nomor_mesin_update').val(),
-            'warna':$('#warna_update').val(),
-            'warna_tnkb':$('#warna_tnkb_update').val(),
-            'bahan_bakar':$('#bahan_bakar_update').val(),
+        var user_id = $(this).val();
+        var user_edit = {
+            'nomor_registrasi':$('#nomor_registrasi_edit').val(),
+            'nama_pemilik':$('#nama_pemilik_edit').val(),
+            'alamat':$('#alamat_edit').val(),
+            'merk':$('#merk_edit').val(),
+            'tipe':$('#tipe_edit').val(),
+            'jenis':$('#jenis_edit').val(),
+            'model':$('#model_edit').val(),
+            'tahun_pembuatan':$('#tahun_pembuatan_edit').val(),
+            'nomor_rangkaian':$('#nomor_rangkaian_edit').val(),
+            'nomor_mesin':$('#nomor_mesin_edit').val(),
+            'warna':$('#warna_edit').val(),
+            'warna_tnkb':$('#warna_tnkb_edit').val(),
+            'bahan_bakar':$('#bahan_bakar_edit').val(),
         };
 
         $.ajaxSetup({
@@ -775,21 +875,79 @@
                     });
 
         $.ajax({
-            type: "Patch",
-            url: "/route/"+user_id_update,
-            data: update_user,
+            type: "PATCH",
+            url: `/update/user/`+user_id,
+            data: user_edit,
             dataType: "json",
             success: function (response) {
                 if(response.status == 400){
-                    
+                    $('#v-pills-form').find('ul').html('');
+                        if(response.errors.nomor_registrasi){
+                            $('#nomor_registrasi_edit_alert').append('<li>'+response.errors.nomor_registrasi+'</li>');
+                            $('#nomor_registrasi_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.nama_pemilik){
+                            $('#nama_pemilik_edit_alert').append('<li>'+response.errors.nama_pemilik+'</li>');
+                            $('#nama_pemilik_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.alamat){
+                            $('#alamat_edit_alert').append('<li>'+response.errors.alamat+'</li>');
+                            $('#alamat_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.merk){
+                            $('#merk_edit_alert').append('<li>'+response.errors.merk+'</li>');
+                            $('#merk_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.tipe){
+                            $('#tipe_edit_alert').append('<li>'+response.errors.tipe+'</li>');
+                            $('#tipe_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.jenis){
+                            $('#jenis_edit_alert').addClass('alert alert-danger');
+                            $('#jenis_edit_alert').append('<li>'+response.errors.jenis+'</li>');
+                        }
+                        if(response.errors.model){
+                            $('#model_edit_alert').append('<li>'+response.errors.model+'</li>');
+                            $('#model_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.tahun_pembuatan){
+                            $('#tahun_pembuatan_edit_alert').append('<li>'+response.errors.tahun_pembuatan+'</li>');
+                            $('#tahun_pembuatan_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.nomor_rangkaian){
+                            $('#nomor_rangkaian_edit_alert').append('<li>'+response.errors.nomor_rangkaian+'</li>');
+                            $('#nomor_rangkaian_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.nomor_mesin){
+                            $('#nomor_mesin_edit_alert').append('<li>'+response.errors.nomor_mesin+'</li>'); 
+                            $('#nomor_mesin_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.warna){
+                            $('#warna_edit_alert').append('<li>'+response.errors.warna+'</li>');
+                            $('#warna_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.warna_tnkb){
+                            $('#warna_tnkb_edit_alert').append('<li>'+response.errors.warna_tnkb+'</li>');  
+                            $('#warna_tnkb_edit_alert').addClass('alert alert-danger');
+                        }
+                        if(response.errors.bahan_bakar){
+                            $('#bahan_bakar_edit_alert').append('<li>'+response.errors.bahan_bakar+'</li>');
+                            $('#bahan_bakar_edit_alert').addClass('alert alert-danger');
+                        }
                 }
                 else if(response.status == 200){
-
+                    $("#success-edit-alert").fadeTo(2000, 500).slideUp(500, function() {
+                        $("#success-edit-alert").slideUp(500);
+                    });
+                    $('#editModal ul').html('');
+                    $('#editModal ul').removeClass('alert alert-danger');
+                    render_user();
                 }
-            }
+                }
         });
     });
-// Search Box
+
+// Search Box User
         $(document).ready(function () {
                 $('#searchBox').on("keyup",function(){
                     var value = $(this).val().toLowerCase();
@@ -801,7 +959,7 @@
 
 // New Category
         $(document).ready(function () {
-
+            $('#success-update-alert').hide();
             $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -819,9 +977,26 @@
                     contentType: false,
                     processData: false,
                     success: function (response) {
-                        $('#categoryForm').find('input').val("");
-                        render_category();
-                        list_category();
+                        if(response.status == 400){
+                            if(response.errors.new_kategori){
+                                $('#new_kategori_alert').addClass('alert alert-danger');
+                                $('#new_kategori_alert').append('<li>'+response.errors.kategori+'</li>')
+                            }
+                            if(response.errors.image){
+                                $('#image_alert').addClass('alert alert-danger');
+                                $('#image_alert').addClass('<li>'+respons.errors.image+'</li>')
+                            }
+                            
+                        }
+                        else if(response.status == 200){
+                            $("#success-update-alert").fadeTo(2000, 500).slideUp(500, function() {
+                                $("#success-update-alert").slideUp(500);
+                            });
+                            $('#categoryForm').find('input').val("");
+                            render_category();
+                            list_category();
+                        }
+                        
                     }
                 });
             })

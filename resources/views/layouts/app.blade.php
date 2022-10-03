@@ -44,8 +44,12 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link">Home</a>
+                                </li>
                         @else
+
+                                
                             <li class="nav-item">
                                 <a href="{{route('dashboard')}}" class="nav-link">Map</a>
                             </li>
@@ -80,30 +84,6 @@
         <main class="min-h-screen">
             @yield('content')
         </main>
-
-        {{-- <footer class=" p-5 bg-white max-h-100 footer">
-            <div class="row">
-                <div class="col">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                        Laboriosam, mollitia? Odit cumque temporibus, animi esse molestiae iure suscipit sit necessitatibus 
-                        dicta dolorum tempora aspernatur reiciendis laborum minima ea nulla natus?</p>
-                </div>
-                <div class="col">
-                    <ul class=" navbar-nav">
-                        <li class="nav-item">Test1</li>
-                        <li class="nav-item">Test2</li>
-                        <li class="nav-item">Test3</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul class=" navbar-nav">
-                        <li class="nav-item">Test1</li>
-                        <li class="nav-item">Test2</li>
-                        <li class="nav-item">Test3</li>
-                    </ul>
-                </div>
-            </div>
-        </footer> --}}
     </div>
 
     @stack('child-script')

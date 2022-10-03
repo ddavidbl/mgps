@@ -19,7 +19,7 @@ class admin
     public function handle(Request $request, Closure $next, $guard = "admin")
     {
         if (!auth()->guard($guard)->check()) {
-            return redirect('/home');
+            return redirect('/track');
         }
         return $next($request);
     }
