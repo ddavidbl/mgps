@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Service;
 use App\Models\Servicelog;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -14,11 +15,10 @@ class AdminController extends Controller
     public function viewUser($id)
     {
         $user = User::find($id);
-        $service_log = Servicelog::select('id', 'catatan_servis')->where('id_kendaraan', $id)->get();
+
         return response()->json([
             'status' => 200,
             'user' => $user,
-            'log' => $service_log,
         ]);
     }
 
@@ -191,23 +191,24 @@ class AdminController extends Controller
         }
     }
 
-    public function categoryList()
-    {
-        $categorys = Category::all();
-        $categorys_table = view('admin.category-render', compact('categorys'))->render();
-        return response()->json([
-            'category_list' => $categorys_table,
-        ]);
-    }
 
     public function deleteuser($id)
     {
-        $deleteUser = User::find($id)->delete();
-        $deleteUser;
-        return response()->json([
-            'status' => 200,
-            'message' => 'This User Deleted',
-        ]);
+        $deleteUserlog = Servicelog::where('id_kendaraan', '=', $id);
+        $deleteUser = User::findorfail($id);
+        if ($deleteUser) {
+            $deleteUserlog->delete();
+            $deleteUser->delete();
+            return response()->json([
+                'status' => 200,
+                'message' => 'This User Has Been Removed',
+            ]);
+        } else {
+            return response()->json([
+                'status' => 400,
+                'message' => 'This User Doesnt Exist',
+            ]);
+        }
     }
 
     // Service Log
@@ -215,7 +216,8 @@ class AdminController extends Controller
     {
         $validate = Validator::make($request->all(), [
             'id_kendaraan' => 'required',
-            'catatan_servis' => 'required',
+            'jenis_pemeliharaan' => 'required',
+            'catatan_pemeliharaan' => 'nullable',
         ]);
 
         if ($validate->fails()) {
@@ -225,8 +227,9 @@ class AdminController extends Controller
             ]);
         } else {
             $service_log = new Servicelog;
-            $service_log = $request->input('id_kendaraan');
-            $service_log = $request->input('catatan_servis');
+            $service_log->id_kendaraan = $request->input('id_kendaraan');
+            $service_log->jenis_pemeliharaan = $request->input('jenis_pemeliharaan');
+            $service_log->catatan_pemeliharaan = $request->input('catatan_pemeliharaan');
             $service_log->save();
             return response()->json([
                 'status' => 200,
@@ -303,5 +306,67 @@ class AdminController extends Controller
                 'alert' => 'Category Added Successfully',
             ]);
         }
+    }
+
+    public function categoryList()
+    {
+        $categorys = Category::all();
+        $categorys_table = view('admin.category-render', compact('categorys'))->render();
+        return response()->json([
+            'category_list' => $categorys_table,
+        ]);
+    }
+
+
+    public function newService(Request $request)
+    {
+
+        $validate = Validator::make($request->all(), [
+            'service' => 'required'
+        ]);
+
+        if ($validate->fails()) {
+            return response()->json([
+                'status' => 400,
+                'errors' => $validate->errors(),
+            ]);
+        } else {
+            $service = new Service;
+            $service->service = $request->input('service');
+            $service->save();
+
+            return response()->json([
+                'status' => 200,
+            ]);
+        }
+    }
+
+    public function list_service()
+    {
+        $services = Service::all();
+        $services_table = view('admin.services', compact('services'))->render();
+        return response()->json([
+            'service_list' => $services_table,
+        ]);
+    }
+
+    public function renderService()
+    {
+        $services = Service::all();
+        $render_service = view('admin.service-render', compact('services'))->render();
+
+        return response()->json([
+            'services' => $render_service,
+        ]);
+    }
+
+    public function renderServiceLog($id)
+    {
+        $service_log = Servicelog::select('created_at', 'jenis_pemeliharaan', 'catatan_pemeliharaan')->where('id_kendaraan', $id)->orderBy('created_at', 'DESC')->get();
+        $render_servicelog = view('admin.servicelog', compact('service_log'))->render();
+
+        return response()->json([
+            'log' => $render_servicelog,
+        ]);
     }
 }

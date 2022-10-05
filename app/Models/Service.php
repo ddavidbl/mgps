@@ -5,17 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Service extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'role',
-        'icon'
+        'service',
     ];
 
-    public function user()
+    public function servicelog()
     {
-        $this->hasMany(User::class);
+        $this->hasMany(Servicelog::class);
     }
 }

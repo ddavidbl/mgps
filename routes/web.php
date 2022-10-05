@@ -45,6 +45,14 @@ Route::middleware('auth:admin')->controller(AdminController::class)->group(funct
     Route::post('/add/category', 'newCategory')->name('newCategory');
     Route::get('/categorys', 'renderCategory')->name('renderCategory');
     Route::get('/category_list', 'categoryList')->name('category_list');
+    // Tambahkan Edit Kategori
+
+    Route::post('/add/service', 'newService')->name('newService');
+    Route::get('/services', 'renderService')->name('renderService');
+    Route::get('/service_list', 'list_service')->name('service_list');
+
+    Route::post('/add/log', 'addLog')->name('newServiceLog');
+    Route::get('/render/log/{id}', 'renderServiceLog')->name('renderLog');
 });
 
 

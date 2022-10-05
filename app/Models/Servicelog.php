@@ -11,7 +11,8 @@ class Servicelog extends Model
 
     protected $fillable = [
         'id_kendaraan',
-        'catatan_servis',
+        'jenis_pemeliharaan',
+        'catatan_pemeliharaan',
     ];
 
     public function idKendaraan()

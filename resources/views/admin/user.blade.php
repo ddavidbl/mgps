@@ -9,11 +9,11 @@
                         <div class=" p-1 col-2 nav flex-column nav-pills me-3 min-vh-100  rounded shadow bg-body align-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <button class="nav-link shadow active  mt-4 w-75" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">User</button>
                             <button class="nav-link shadow  mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">New User</button>
-                            <button class="nav-link shadow mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category">Category</button>
+                            <button class="nav-link shadow mt-4 w-75" id="v-pills-category-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category">Category</button>
+                            <button class="nav-link shadow mt-4 w-75" id="v-pills-service-tab" data-bs-toggle="pill" data-bs-target="#v-pills-service" type="button" role="tab" aria-controls="v-pills-service">Service</button>
                         </div>
 
                         <div class="rounded shadow bg-body align-content-center tab-content col-10 p-4 vh-100 overflow-scroll" id="v-pills-tabContent">
-
                     {{-- Edit Modal --}}
                         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                             <div class=" modal-dialog  modal-fullscreen">
@@ -158,136 +158,141 @@
                     {{-- View Modal --}}
                             <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
                                 <div class=" modal-dialog  modal-fullscreen">
-                                    <div class="modal-content">
+                                    <div class="modal-content p-4">
+
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="viewModalLabel">View User: <span id="id_view_user"></span></h5>
                                             <input type="hidden" class="d-none" id="user_id_value" value="">
                                             <button type="button" class="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
                                         </div>
+
                                         <div class="modal-body">
-                                            <div class="card mb-2">
-                                                    <div class="card-header">
-                                                    Data Kendaraan
-                                                    </div>
-                                                    <div class="card-body row">
-                                                        <div class="col">
 
-                                                            <div class="row mb-1">
-                                                                <label for="view_nomor_registrasi" class="col-3 col-form-label">Nomor Registrasi</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_nomor_registrasi" class="form-control">
-                                                                </div>
-                                                            </div>
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <button class="nav-link active" id="nav_detail_kendaraan" data-bs-toggle="tab" data-bs-target="#detail_kendaraan" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Data Kendaraan</button>
+                                                    <button class="nav-link" id="nav_detail_pemeliharaan" data-bs-toggle="tab" data-bs-target="#detail_pemeliharaan" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Catatan Pemeliharaan</button>
+                                                </div>
+                                            </nav>
 
-                                                            <div class="row mb-1">
-                                                                <label for="view_nama_pemilik" class="col-3 col-form-label">Nama Pemilik</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_nama_pemilik" class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_alamat" class="col-3 col-form-label">Alamat</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_alamat" class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_merk" class="col-3 col-form-label">Merk</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_merk" class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_tipe" class="col-3 col-form-label">Tipe</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_tipe" class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_jenis" class="col-3 col-form-label">Jenis</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_jenis" class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_model" class="col-3 col-form-label">Model</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_model" class="form-control">
-                                                                </div>
-                                                            </div>
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane fade show active my-4" id="detail_kendaraan" role="tabpanel" aria-labelledby="detail_kendaraan_tab" tabindex="0">
+                                                    <div class="card mb-2">
+                                                        <div class="card-header">
+                                                        Data Kendaraan
                                                         </div>
-
-                                                        <div class="col">
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_tahun_pembuatan" class="col-3 col-form-label">Tahun Pembuatan</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_tahun_pembuatan" class="form-control">
+                                                        <div class="card-body row">
+                                                            <div class="col">
+    
+                                                                <div class="row">
+                                                                    <label for="view_nomor_registrasi" class="col-3 col-form-label">Nomor Registrasi</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_nomor_registrasi" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_nama_pemilik" class="col-3 col-form-label">Nama Pemilik</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_nama_pemilik" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_alamat" class="col-3 col-form-label">Alamat</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_alamat" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_merk" class="col-3 col-form-label">Merk</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_merk" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_tipe" class="col-3 col-form-label">Tipe</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_tipe" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_jenis" class="col-3 col-form-label">Jenis</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_jenis" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_model" class="col-3 col-form-label">Model</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_model" class="form-control">
+                                                                    </div>
                                                                 </div>
                                                             </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_nomor_rangkaian" class="col-3 col-form-label">Nomor Rangkaian</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_nomor_rangkaian" class="form-control">
+    
+                                                            <div class="col">
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_tahun_pembuatan" class="col-3 col-form-label">Tahun Pembuatan</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_tahun_pembuatan" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_nomor_rangkaian" class="col-3 col-form-label">Nomor Rangkaian</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_nomor_rangkaian" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_nomor_mesin" class="col-3 col-form-label">Nomor Mesin</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_nomor_mesin" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_warna" class="col-3 col-form-label">Warna</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_warna" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_warna_tnkb" class="col-3 col-form-label">Warna TNKB</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_warna_tnkb" class="form-control">
+                                                                    </div>
+                                                                </div>
+    
+                                                                <div class="row mb-1">
+                                                                    <label for="view_bahan_bakar" class="col-3 col-form-label">Bahan Bakar</label>
+                                                                    <div class="col-4">
+                                                                        <input type="text" disabled value="" id="view_bahan_bakar" class="form-control">
+                                                                    </div>
                                                                 </div>
                                                             </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_nomor_mesin" class="col-3 col-form-label">Nomor Mesin</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_nomor_mesin" class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_warna" class="col-3 col-form-label">Warna</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_warna" class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_warna_tnkb" class="col-3 col-form-label">Warna TNKB</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_warna_tnkb" class="form-control">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="row mb-1">
-                                                                <label for="view_bahan_bakar" class="col-3 col-form-label">Bahan Bakar</label>
-                                                                <div class="col-4">
-                                                                    <input type="text" disabled value="" id="view_bahan_bakar" class="form-control">
-                                                                </div>
-                                                            </div>
+                                                            
                                                         </div>
-                                                        
                                                     </div>
                                                 </div>
 
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        Data Service Kendaraan
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <table class="table table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Tanggal</th>
-                                                                    <th>Catatan Service Kendaraan</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody class="" id="render_service_log">
-                                                                
-                                                            </tbody>
-                                                        </table>
+                                                <div class="tab-pane fade" id="detail_pemeliharaan" role="tabpanel" aria-labelledby="detail_pemeliharaan_tab" tabindex="0">
+                                                    <div class="my-4 row">
+                                                        <form class="d-flex my-2" role="search">
+                                                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBox-log">
+                                                            <button class="btn btn-outline-success" type="submit">Search</button>
+                                                        </form>
+                                                        <div id="render_servicelog_id"></div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -306,12 +311,24 @@
                                         </div>
 
                                         <div class="modal-body">
-
+                                            <div class="alert alert-danger p-3">
+                                                <h3 >Tekan 'Hapus' untuk mengkonfirmasi</h3>
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        ID yang akan dihapus <strong class="select_delete_id"></strong>
+                                                    </li>
+                                                    <li>
+                                                        <strong>Data yang dihapus tidak akan bisa dikembalikan</strong>
+                                                    </li>
+                                                </ul>
+                                                
+                                            </div>
+                                            
                                         </div>
 
                                         <div class="modal-footer">
                                             <button type="button" id="" data-bs-dismiss="modal" class="btn btn-secondary">Close</button>
-                                            <button type="button" id="deleteBtn" class="btn btn-danger">Confirm Delete</button>
+                                            <button type="button" id="deleteBtn" class="btn btn-danger">Hapus</button>
                                         </div>
 
                                     </div>
@@ -319,25 +336,49 @@
                             </div>
 
                     {{-- Service Modal --}}
-                        <div class="modal fade" id="ServiceModal" tabindex="-1" aria-labelledby="ServiceModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-fullscreen">
-                                <div class="modal-content">
+                        <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="ServiceModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+                                <div class="modal-content p-4">
                                     <div class="modal-header">
-                                        <h3 class="text-center">Pencatatan Servis Kendaraan</h3>
+                                        <h3 class="text-center">Pencatatan Perawatan Kendaraan</h3>
                                     </div>
 
                                     <div class="modal-body">
-                                        <div class="mb-3 row">
-                                            <label for="" class=""></label>
-                                            <div>
 
+                                        <div class="alert alert-success" id="servicelog_alert">
+                                            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+                                            <strong>Sukses </strong> Menambahkan Catatan Pemeliharaan Kendaraan.
+                                        </div>
+
+                                        <div class="mb-2 row">
+                                            <label for="" class="col-form-label col-sm-2">ID Kendaraan</label>
+                                            <div class="col-sm-10">
+                                                <input disabled class="form-control" type="string" value="" id="id_kendaraan_log">
+                                                <ul class="list-unstyled" id=""></ul>
                                             </div>
                                         </div>
+
+                                        <div class="mb-2 row">
+                                            <label for="service_log" class="col-form-label col-sm-2">Pemeliharaan Kendaraan</label>
+                                            <div id="service_option" class="col-sm-10"></div>
+                                        </div>
+
+                                        <div class="mb-2 row">
+                                            <label for="service_detail" class="col-form-label col-sm-2">Detail</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="service_detail" id="service_detail" rows="3" class="form-control"></textarea>
+                                                <ul class="list-unstyled" id="detail_pemeliharaan"></ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-2 row">
+                                            <button type="button" id="addLogBtn" class="btn btn-primary col-10 offset-2">Simpan</button>
+                                        </div>
+
                                     </div> 
-                                    
+
                                     <div class="modal-footer">
                                         <button type="button" data-bs-dismiss="modal" class="btn btn-seconday">Close</button>
-                                        <button type="button" id="addLogBtn" class="btn btn-primary">Tambahkan</button>
                                     </div>
                                 </div>
                             </div>
@@ -345,10 +386,17 @@
 
                     {{-- Render User Data Tab--}}
                         <div class="tab-pane fade active show" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab" tabindex="0">
+                            
                             <form class="d-flex" role="search">
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBox">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
+
+                            <div class="alert alert-success" id="success-delete-alert">
+                                <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+                                <strong>Sukses </strong> Menghapus Data.
+                            </div>
+
                             <div id="renderUser" class="rounded border border-1 mt-4 p-2">
                                 {{-- render data --}}
                             </div>
@@ -358,8 +406,6 @@
                         <div class="tab-pane fade  " id="v-pills-form" role="tabpanel" aria-labelledby="v-pills-form-tab" tabindex="0">
                             <div class="rounded shadow w-auto p-4 ">
                                 <h3 class="text-center">Add New User Form</h3>
-
-
 
                                 <div class="p-2 mt-2">
                                     <div class="my-4 row">
@@ -539,12 +585,41 @@
                                             <div class="mb-3-row">
                                                 <button type="submit" id="newCategoryBtn" class="btn btn-success col-10 offset-2">Submit</button>
                                             </div>
+                                        </div>
                                     </form>
 
                                 </div>
 
                                 <div class="rounded border border-1 p-4 mt-4" id="categoryList"></div>
                             </div>
+                    {{-- Service Tab --}}
+                            <div class="tab-pane fade" id="v-pills-service" role="tabpanel" aria-labelledby="v-pills-service-tab" tabindex="0">
+                                <div class="rounded shadow w-auto p-4">
+                                    <h3 class="text-center">Service</h3>
+
+                                    <div class="p-2 mt-2">
+                                        <div class="mb-3 row">
+                                            <label for="service" class="col-form-label col-sm-2">Jenis Perawatan / Pemeliharaan</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="service" id="service" class="form-control">
+                                                <ul class="list-unstyled" id="service_alert"></ul>
+                                            </div>
+
+                                            <div class="alert alert-success" id="success-addservice-alert">
+                                                <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+                                                <strong>Sukses </strong> Menambahkan Kategori Baru.
+                                            </div>
+
+                                            <div class="mb-3-row">
+                                                <button type="submit" id="newServiceBtn" class="btn btn-success col-10 offset-2">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="rounded border border-1 p-4 mt-4" id="renderService"></div>
+                            </div>
+
                         </div>
 
                         
@@ -629,22 +704,47 @@
 
 
 // Delete Modal
+    $('#success-delete-alert').hide();
     $(document).on('click','#openDelete', function (e) {
         e.preventDefault();
         var delete_id = $(this).val();
         $('#DeleteModal').modal('show');
-        $('#delete_user_id').val(delete_id);
+        $('.select_delete_id').html(delete_id);
+        $('#deleteBtn').val(delete_id);
     });
 
     $(document).on('click','#deleteBtn', function (e) {
         e.preventDefault();
         var delete_id = $(this).val();
+
+        $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
         
+        $.ajax({
+            type: "Get",
+            url: "/delete/user/"+delete_id,
+            // data: {"_method":"DELETE","_token": "{{ csrf_token() }}"},
+            success: function (response) {
+                if(response.status == 200){
+                    $("#success-delete-alert").fadeTo(2000, 500).slideUp(500, function() {
+                        $("#success-delete-alert").slideUp(500);
+                    });
+                    $('#DeleteModal').modal('hide');
+                    $('#deleteBtn').val();
+                    $('.select_delete_id').html('');
+                    render_user();
+                }
+            }
+        });
     });
 
 // View Modal
     $(document).on('click','#openView', function () {
         var view_id = $(this).val();
+        render_log(view_id);
         $('#user_id_value').val(view_id);
         $('#id_view_user').text(view_id);
         $('#viewModal').modal('show');
@@ -825,7 +925,6 @@
     $(document).on('click','#openEdit', function (e) {
         e.preventDefault();
         var user_id = $(this).val();
-        $('').addClass('d-none');
         $('#editModal').modal('show');
         $.ajax({
             type: "GET",
@@ -1001,5 +1100,164 @@
                 });
             })
         });
-    </script>
+// New Service
+        $(document).ready(function () {
+            $('#success-addservice-alert').hide();
+
+        $(document).on('click','#newServiceBtn',function(e){
+            e.preventDefault();
+            var ServiceData = {
+                'service':$('#service').val(),
+            };
+
+            $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+            $.ajax({
+                type: "POST",
+                url: "{{route('newService')}}",
+                data: ServiceData,
+                dataType: "json",
+                success: function (response) {
+                    if(response.status == 400){
+                        $('#v-pills-service').find('ul').html('');
+                            if(response.errors.new_service){
+                                $('#new_service_alert').append('<li>'+response.errors.service+'</li>')
+                                $('#new_service_alert').addClass('alert alert-danger');
+                            }
+                    }
+                    else if (response.status == 200){
+                        $("#success-addservice-alert").fadeTo(2000, 500).slideUp(500, function() {
+                        $("#success-addservice-alert").slideUp(500);
+                    });
+                        $('#v-pills-service input').val('');
+                        $('#new_service_alert ul').html('');
+                        $('#new_service_alert ul').removeClass('alert alert-danger');
+
+                        render_service();
+                    }
+                }
+            });
+
+        })
+        });
+// Service List
+        var list_service = function(){
+            $(document).ready(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "{{route('service_list')}}",
+                    dataType: "json",
+                    success: function (response) {
+                        $('#service_option').html(response.service_list);
+                    }
+                });
+            });
+        }
+
+        list_service();
+// Render Service
+        var render_service = function(){
+            $(document).ready(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "{{route('renderService')}}",
+                    dataType: "json",
+                    success: function (response) {
+                        $('#renderService').html(response.services);
+                    }
+                });
+            });
+        }
+
+        render_service();
+
+// Service Modal
+        $(document).on('click','#openService', function (e) {
+            e.preventDefault();
+            list_service();
+            var user_id = $(this).val();
+            $('#id_kendaraan_log').val(user_id);
+            $('#service_detail').val('');
+            $('#serviceModal').modal('show');
+            $('#servicelog_alert').hide();
+        });
+
+                $(document).on('click','#addLogBtn', function (e) {
+                    e.preventDefault();
+    
+                    var log_data = {
+                        'id_kendaraan' : $('#id_kendaraan_log').val(),
+                        'jenis_pemeliharaan' : $('#service_log').val(),
+                        'catatan_pemeliharaan' : $('#service_detail').val(),
+                    };
+    
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+    
+                    $.ajax({
+                        type: "POST",
+                        url: "{{route('newServiceLog')}}",
+                        data: log_data,
+                        dataType: "json",
+                        success: function (response) {
+                            if(response.status == 400){
+                                if(response.errors.id_kendaraan){
+                                    $('#id_kendaraan_alert').addClass('alert alert-danger');
+                                    $('#id_kendaraan_alert').append('<li>'+response.errors.id_kendaraan+'</li>');
+                                }
+                                if(response.errors.jenis_pemeliharaan){
+                                    $('#jenis_pemeliharaan').addClass('alert alert-danger');
+                                    $('#jenis_pemeliharaan').append('<li>'+response.errors.jenis_pemeliharaan+'</li>');
+                                }
+                                if(response.errors.detail_pemeliharaan){
+                                    $('#detail_pemeliharaan').addClass('alert alert-danger');
+                                    $('#detail_pemeliharaan').append('<li>'+response.errors.detail_pemeliharaan+'</li>');
+                                }
+                            }
+                            else if(response.status == 200){
+                                $("#servicelog_alert").fadeTo(2000, 500).slideUp(500, function() {
+                                $("#servicelog_alert").slideUp(500);
+                                list_service();
+                                $('#service_detail').val('');
+                            });
+                                
+                            }
+                        }
+                    });
+                });
+
+// Render Service Log
+        var render_log = function(id){
+            $(document).ready(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/render/log/"+id,
+                    dataType: "json",
+                    success: function (response) {
+                        $('#render_servicelog_id').html(response.log);
+                    }
+                });
+            });
+        }
+
+// Search Box Service Log
+    $(document).ready(function () {
+                    $('#searchBox-log').on("keyup",function(){
+                        var value = $(this).val().toLowerCase();
+                        $('#tableBody-log tr').filter(function(){
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) >-1)
+                        });
+                    });
+                });
+</script>
+
+
+
 @endpush

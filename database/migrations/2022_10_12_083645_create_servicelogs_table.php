@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_kendaraan');
             $table->foreign('id_kendaraan')->references('id')->on('users');
-            $table->string('catatan_servis')->nullable();
+            $table->string('jenis_pemeliharaan');
+            $table->string('catatan_pemeliharaan')->nullable();
             $table->timestamps();
         });
     }
