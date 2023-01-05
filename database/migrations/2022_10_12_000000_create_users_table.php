@@ -33,6 +33,8 @@ return new class extends Migration
             $table->string('warna');
             $table->string('warna_tnkb');
             $table->string('bahan_bakar');
+            $table->string('jumlah_bahan_bakar')->nullable();
+            $table->string('kecepatan')->nullable();
             $table->decimal('lat', 10, 8)->nullable()->useCurrentOnUpdate();
             $table->decimal('lng', 11, 8)->nullable()->useCurrentOnUpdate();
             $table->rememberToken();

@@ -34,6 +34,8 @@ class User extends Authenticatable
         'nomor_mesin',
         'warna',
         'bahan_bakar',
+        'jumlah_bahan_bakar',
+        'kecepatan',
         'lat',
         'lng',
         'path',

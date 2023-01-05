@@ -45,17 +45,17 @@
                                 </li>
                             @endif
                                 <li class="nav-item">
-                                    <a href="/" class="nav-link">Home</a>
+                                    <a href="/" class="nav-link">Beranda</a>
                                 </li>
                         @else
 
                                 
                             <li class="nav-item">
-                                <a href="{{route('dashboard')}}" class="nav-link">Map</a>
+                                <a href="{{route('dashboard')}}" class="nav-link">Peta</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{route('user')}}" class="nav-link">User</a>
+                                <a href="{{route('user')}}" class="nav-link">Pengguna</a>
                             </li>
 
                             <li class="nav-item dropdown">

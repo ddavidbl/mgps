@@ -7,19 +7,61 @@
                 <div class="d-flex align-items-start">
                     {{-- Side Nav Bar --}}
                         <div class=" p-1 col-2 nav flex-column nav-pills me-3 min-vh-100  rounded shadow bg-body align-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <button class="nav-link shadow active  mt-4 w-75" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">User</button>
-                            <button class="nav-link shadow  mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">New User</button>
-                            <button class="nav-link shadow mt-4 w-75" id="v-pills-category-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category">Category</button>
-                            <button class="nav-link shadow mt-4 w-75" id="v-pills-service-tab" data-bs-toggle="pill" data-bs-target="#v-pills-service" type="button" role="tab" aria-controls="v-pills-service">Service</button>
+                            <button class="nav-link shadow active  mt-4 w-75" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="true">Pengguna</button>
+                            <button class="nav-link shadow  mt-4 w-75" id="v-pills-form-tab" data-bs-toggle="pill" data-bs-target="#v-pills-form" type="button" role="tab" aria-controls="v-pills-form" aria-selected="false">Pengguna Baru</button>
+                            <button class="nav-link shadow mt-4 w-75" id="v-pills-category-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category">Kategori kendaraan</button>
+                            <button class="nav-link shadow mt-4 w-75" id="v-pills-service-tab" data-bs-toggle="pill" data-bs-target="#v-pills-service" type="button" role="tab" aria-controls="v-pills-service">Perawatan</button>
                         </div>
 
                         <div class="rounded shadow bg-body align-content-center tab-content col-10 p-4 vh-100 overflow-scroll" id="v-pills-tabContent">
+                    {{-- Service-Delete Modal --}}
+                        <div class="modal fade" id="service_delete_modal" tabindex="-1" aria-labelledby="deleteServiceModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+                                <div class="modal-content p-4">
+
+                                    <div class="modal-header">
+                                        <h3 class="text-center">Hapus Jenis Pemeliharaan</h3>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        Menghapus jenis pemeliharaan ini akan menghapus semua catatan pemeliharaan yang menggunakan jenis pemeliharaan ini
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger">Konfirmasi</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    {{-- Service Edit Modal --}}
+                        <div class="modal fade" id="service_edit_modal" tabindex="-1" aria-labelledby="editServiceModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+                                <div class="modal-content p-4">
+                                    <div class="modal-header">
+                                        <h3 class="text-center">Mengubah Jenis Pemeliharaan</h3>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="col-10 offset-1">
+                                            <input type="text" value="" class="form-control" id="service_edit_input">
+                                        </div>
+                                        Mengubah nama jenis pemeliharaan akan mengubah seluruh jenis pemeliharaan yang ada di catatan pemeliharaan
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-warning" type="submit">Konfirmasi</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     {{-- Edit Modal --}}
                         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                             <div class=" modal-dialog  modal-fullscreen">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="editModalLabel">Edit User</span></h5>
+                                        <h5 class="modal-title" id="editModalLabel">Ubah Data</span></h5>
                                         <input type="hidden" class="d-none" id="user_id_value_edit" value="">
                                         <button type="button" class="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
                                     </div>
@@ -27,7 +69,7 @@
 
                                         <div class="alert alert-success" id="success-edit-alert">
                                             <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
-                                            <strong>Sukses </strong> Memperbaharui Data.
+                                            <strong>Sukses </strong> Mengubah Data.
                                         </div>
 
                                         <div class="card mb-2">
@@ -62,7 +104,7 @@
                                                         </div>
 
                                                         <div class="row mb-1">
-                                                            <label for="merk_edit" class="col-3 col-form-label">Merk</label>
+                                                            <label for="merk_edit" class="col-3 col-form-label">Merek</label>
                                                             <div class="col-4">
                                                                 <input type="text"  id="merk_edit" name="merk_edit" class="form-control">
                                                                 <ul class="list-unstyled" id="merk_edit_alert"></ul>
@@ -148,8 +190,8 @@
                                             </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary" id="update_Btn">Update</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                        <button type="submit" class="btn btn-primary" id="update_Btn">Perbaharui Data</button>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +203,7 @@
                                     <div class="modal-content p-4">
 
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewModalLabel">View User: <span id="id_view_user"></span></h5>
+                                            <h5 class="modal-title" id="viewModalLabel">Detail Pengguna :  <span id="id_view_user"></span></h5>
                                             <input type="hidden" class="d-none" id="user_id_value" value="">
                                             <button type="button" class="btn-close" data-bs-dismiss='modal' aria-label="Close"></button>
                                         </div>
@@ -286,8 +328,8 @@
                                                 <div class="tab-pane fade" id="detail_pemeliharaan" role="tabpanel" aria-labelledby="detail_pemeliharaan_tab" tabindex="0">
                                                     <div class="my-4 row">
                                                         <form class="d-flex my-2" role="search">
-                                                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBox-log">
-                                                            <button class="btn btn-outline-success" type="submit">Search</button>
+                                                            <input class="form-control me-2" type="search" placeholder="Masukkan Data" aria-label="Search" id="searchBox-log">
+                                                            <button class="btn btn-outline-success" type="submit">Cari</button>
                                                         </form>
                                                         <div id="render_servicelog_id"></div>
                                                     </div>
@@ -295,7 +337,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                                         </div>
                                     </div>
                                 </div>
@@ -306,7 +348,7 @@
                                 <div class="modal-dialog modal-dialog centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4>Delete <span id="delete_user_id"></span></h4>
+                                            <h4>Hapus <span id="delete_user_id"></span></h4>
                                             <input type="text" class="d-none" value="">
                                         </div>
 
@@ -335,7 +377,7 @@
                                 </div>
                             </div>
 
-                    {{-- Service Modal --}}
+                    {{-- Add Servicelog Modal --}}
                         <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="ServiceModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
                                 <div class="modal-content p-4">
@@ -378,7 +420,7 @@
                                     </div> 
 
                                     <div class="modal-footer">
-                                        <button type="button" data-bs-dismiss="modal" class="btn btn-seconday">Close</button>
+                                        <button type="button" data-bs-dismiss="modal" class="btn btn-seconday">Tutup</button>
                                     </div>
                                 </div>
                             </div>
@@ -388,8 +430,8 @@
                         <div class="tab-pane fade active show" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab" tabindex="0">
                             
                             <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBox">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                                <input class="form-control me-2" type="search" placeholder="Masukkan Data" aria-label="Search" id="searchBox">
+                                <button class="btn btn-outline-success" type="submit">Cari</button>
                             </form>
 
                             <div class="alert alert-success" id="success-delete-alert">
@@ -405,13 +447,13 @@
                     {{-- Add User Data Tab--}}
                         <div class="tab-pane fade  " id="v-pills-form" role="tabpanel" aria-labelledby="v-pills-form-tab" tabindex="0">
                             <div class="rounded shadow w-auto p-4 ">
-                                <h3 class="text-center">Add New User Form</h3>
+                                <h3 class="text-center">Tambah Pengguna Baru</h3>
 
                                 <div class="p-2 mt-2">
                                     <div class="my-4 row">
                                         <h4>Data Login</h4>
                                         <div class="mb-3 row">
-                                            <label for="username" class="col-sm-2 col-form-label">Username</label>
+                                            <label for="username" class="col-sm-2 col-form-label">Nama</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="username" name="username">
                                                 <ul class="list-unstyled" id="usernamealert"></ul>
@@ -419,7 +461,7 @@
                                         </div>
 
                                         <div class="mb-3  row">
-                                            <label for="password" class="col-sm-2 col-form-label">Password</label>
+                                            <label for="password" class="col-sm-2 col-form-label">Kata Sandi</label>
                                             <div class="col-sm-10">
                                                 <input type="password" class="form-control" id="password" name="password">
                                                 <ul class="list-unstyled" id="passwordalert"></ul>
@@ -462,7 +504,7 @@
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label for="merk" class="col-sm-2 col-form-label">Merk</label>
+                                            <label for="merk" class="col-sm-2 col-form-label">Merek</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="merk" name="merk" required>
                                                 <ul class="list-unstyled" id="merk_alert"></ul>
@@ -548,7 +590,7 @@
                                     </div>
 
                                     <div class="row flex">
-                                        <button class="btn btn-primary" type="submit" id="submitBtn">Submit Data</button>
+                                        <button class="btn btn-primary" type="submit" id="submitBtn">Masukkan Data</button>
                                     </div>
                                 </div>
                             </div>
@@ -557,7 +599,7 @@
                     {{-- Category Tab --}}
                         <div class="tab-pane fade" id="v-pills-category" role="tabpanel" aria-labelledby="v-pills-category-tab" tabindex="0">
                                 <div class="rounded shadow w-auto p-4">
-                                    <h3 class="text-center">Add New Category</h3>
+                                    <h3 class="text-center">Tambahkan Kategori Kendaraan Baru</h3>
 
                                     <form action="" method="POST" enctype="multipart/form-data" id="categoryForm">
                                         <div class="p-2 mt-2">
@@ -583,7 +625,7 @@
                                             </div>
         
                                             <div class="mb-3-row">
-                                                <button type="submit" id="newCategoryBtn" class="btn btn-success col-10 offset-2">Submit</button>
+                                                <button type="submit" id="newCategoryBtn" class="btn btn-success col-10 offset-2">Masukkan Data</button>
                                             </div>
                                         </div>
                                     </form>
@@ -595,7 +637,7 @@
                     {{-- Service Tab --}}
                             <div class="tab-pane fade" id="v-pills-service" role="tabpanel" aria-labelledby="v-pills-service-tab" tabindex="0">
                                 <div class="rounded shadow w-auto p-4">
-                                    <h3 class="text-center">Service</h3>
+                                    <h3 class="text-center">Pemeliharaan</h3>
 
                                     <div class="p-2 mt-2">
                                         <div class="mb-3 row">
@@ -611,7 +653,7 @@
                                             </div>
 
                                             <div class="mb-3-row">
-                                                <button type="submit" id="newServiceBtn" class="btn btn-success col-10 offset-2">Submit</button>
+                                                <button type="submit" id="newServiceBtn" class="btn btn-success col-10 offset-2">Masukkan Data</button>
                                             </div>
                                         </div>
                                     </div>
@@ -633,6 +675,83 @@
 @push('child-script')
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script>
+        
+// Edit Service Modal
+    // $('#success-edit-service-alert').hide();
+
+    // $(document).on('click','#editService', function (e) {
+    //     e.preventDefault();
+    //     var service_id = $(this).val();
+    //     $('#service_edit_modal').modal('show');
+    //     $.ajax({
+    //         type: "GET",
+    //         url: ""+service_id,
+    //         dataType: "json",
+    //         success: function (response) {
+    //             $('#service_edit_input').val(response);    
+    //         }
+    //     });
+    // });
+
+    // $(document).on('click', function (e) {
+    //     e.preventDefault();
+    //     var service_id = $(this).val();
+
+    //     // var service_edit = {
+    //     //     ''
+    //     // };
+
+    //     $.ajaxSetup({
+    //                     headers: {
+    //                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //                     }
+    //                 });
+
+    //     $.ajax({
+    //         type: "PATCH",
+    //         url: "",
+    //         data: service_edit,
+    //         dataType: "json",
+    //         success: function (response) {
+    //             if(response.status == 400){
+
+    //             }
+    //             else if(response.status == 200){
+
+    //             }
+    //         }
+    //     });
+    // });
+
+// Delete Service
+    // $('#success-delete-service-alert').hide();
+    // $(document).on('click','#', function (e) {
+    //     e.preventDefault();
+    //     var delete_id = $(this).val();
+    //     $('#service_delete_modal').modal('show');
+
+    // });
+
+    // $(document).on('click','#', function (e) {
+    //     e.preventDefault();
+    //     var delete_id = $(this).val();
+
+    //     $.ajaxSetup({
+    //                     headers: {
+    //                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //                     }
+    //                 });
+        
+    //     $.ajax({
+    //         type: "",
+    //         url: "url",
+    //         data: "data",
+    //         dataType: "dataType",
+    //         success: function (response) {
+                
+    //         }
+    //     });
+    // });
 // Category List 
     var list_category = function(){
         $(document).ready(function(){
