@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('bahan_bakar');
             $table->string('jumlah_bahan_bakar')->nullable();
             $table->string('kecepatan')->nullable();
+            $table->string('status')->nullable();
             $table->decimal('lat', 10, 8)->nullable()->useCurrentOnUpdate();
             $table->decimal('lng', 11, 8)->nullable()->useCurrentOnUpdate();
             $table->rememberToken();

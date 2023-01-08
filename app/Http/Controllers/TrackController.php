@@ -20,6 +20,9 @@ class TrackController extends Controller
         if ($user) {
             $user->lat = $request->input('lat');
             $user->lng = $request->input('lng');
+            $user->kecepatan = $request->input('kecepatan');
+            $user->jumlah_bahan_bakar = $request->input('bahan_bakar');
+            $user->status = $request->input('status');
             $user->update();
         } else {
             return response()->json([
