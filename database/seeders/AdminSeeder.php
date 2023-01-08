@@ -18,7 +18,7 @@ class AdminSeeder extends Seeder
     {
         DB::table('admins')->insert([
             'username' => 'admin',
-            'password' => Hash::make('qwerty123'),
+            'password' => Hash::make('admin98765'),
         ]);
     }
 }
